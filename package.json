@@ -10,6 +10,10 @@
     "build": "rollup -c",
     "start": "sirv public"
   },
+  "files": [
+    "dist",
+    "src/SvelteSEO.svelte"
+  ],
   "devDependencies": {
     "@rollup/plugin-commonjs": "^12.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
