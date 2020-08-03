@@ -30,7 +30,7 @@ or `npm`:
 
 ### Add SEO to Page
 
-Import Svelte SEO and add the desired properties. This will render out the tags in the <head> for SEO. At a bare minimum, you should add a title and description.
+Import Svelte SEO and add the desired properties. This will render out the tags in the `<head>` for SEO. At a bare minimum, you should add a title and description.
 
 ```svelte
 <script>
