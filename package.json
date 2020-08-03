@@ -1,0 +1,34 @@
+{
+  "name": "svelte-seo",
+  "version": "0.0.1",
+  "svelte": "src/SvelteSEO.svelte",
+  "module": "dist/index.min.mjs",
+  "main": "dist/index.min.js",
+  "repository": "git@github.com:artiebits/svelte-seo.git",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "sirv public"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@tsconfig/svelte": "^1.0.0",
+    "prettier": "^2.0.5",
+    "prettier-plugin-svelte": "^1.1.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^6.1.0",
+    "svelte": "^3.0.0"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0"
+  },
+  "keywords": [
+    "svelte",
+    "sapper",
+    "seo",
+    "ssr"
+  ]
+}
