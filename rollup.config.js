@@ -13,7 +13,9 @@ export default {
     { file: pkg.main, format: "umd", name: "SvelteSEO" },
   ],
   plugins: [
-    svelte({}),
+    svelte({
+      generate: "ssr",
+    }),
 
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
