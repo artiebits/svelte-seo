@@ -64,13 +64,13 @@ Svelte SEO currently supports:
 <svelte:head>
   <SvelteSEO
     openGraph={{
-      title: 'Open Graph Article Title',
-      description: 'Description of open graph article',
-      url: 'https://www.example.com/articles/article-title',
-      type: 'article',
+      title: 'Open Graph Title',
+      description: 'Open Graph Description',
+      url: 'https://www.example.com/page',
+      type: 'website',
       images: [
         {
-          url: 'https://www.test.ie/images/cover.jpg',
+          url: 'https://www.example.com/images/og-image.jpg',
           width: 850,
           height: 650,
           alt: 'Og Image Alt'
