@@ -14,6 +14,17 @@
     "dist",
     "src/SvelteSEO.svelte"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^12.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
@@ -27,6 +38,8 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
     "sirv-cli": "^1.0.0"
   },
   "keywords": [
