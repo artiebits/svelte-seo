@@ -1,5 +1,7 @@
 # Svelte SEO
 
+[![Build Status](https://travis-ci.org/artiebits/svelte-seo.svg?branch=master)](https://travis-ci.org/artiebits/svelte-seo)
+
 Svelte SEO is a plugin that makes managing your SEO easier in Svelte projects.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
