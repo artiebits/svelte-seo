@@ -24,6 +24,10 @@
   {/if}
 
   {#if openGraph}
+    {#if openGraph.title}
+        <meta property="og:title" content={openGraph.title} />
+    {/if}
+
     {#if openGraph.description}
       <meta property="og:description" content={openGraph.description} />
     {/if}
