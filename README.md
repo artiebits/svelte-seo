@@ -36,10 +36,10 @@ Import Svelte SEO and add the desired properties. This will render out the tags 
 
 ```svelte
 <script>
-  import SvelteSEO from "svelte-seo";
+  import SvelteSeo from "svelte-seo";
 </script>
 
-<SvelteSEO
+<SvelteSeo
   title="Simple Usage Example"
   description="A short description goes here."
 />
@@ -58,10 +58,10 @@ Svelte SEO currently supports:
 
 ```svelte
 <script>
-  import SvelteSEO from "svelte-seo";
+  import SvelteSeo from "svelte-seo";
 </script>
 
-<SvelteSEO
+<SvelteSeo
   openGraph={{
     title: 'Open Graph Title',
     description: 'Open Graph Description',
@@ -83,10 +83,10 @@ Svelte SEO currently supports:
 
 ```svelte
 <script>
-  import SvelteSEO from "svelte-seo";
+  import SvelteSeo from "svelte-seo";
 </script>
 
-<SvelteSEO
+<SvelteSeo
   openGraph={{
     title: "Open Graph Article Title",
     description: "Description of open graph article",

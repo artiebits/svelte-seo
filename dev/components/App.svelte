@@ -1,5 +1,5 @@
 <script>
-  import SvelteSEO from "../../src/SvelteSEO.svelte";
+  import SvelteSeo from "../../src/SvelteSeo.svelte";
 
   const openGraph = {
     title: "Open Graph Article Title",
@@ -34,7 +34,7 @@
   };
 </script>
 
-<SvelteSEO
+<SvelteSeo
   title="Article Page Title | Svelte SEO"
   description="Description of article page"
   {openGraph} />

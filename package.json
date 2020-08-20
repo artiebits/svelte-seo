@@ -1,7 +1,7 @@
 {
   "name": "svelte-seo",
   "version": "0.0.1",
-  "svelte": "src/SvelteSEO.svelte",
+  "svelte": "src/SvelteSeo.svelte",
   "module": "dist/index.min.mjs",
   "main": "dist/index.min.js",
   "repository": "git@github.com:artiebits/svelte-seo.git",
@@ -16,7 +16,7 @@
   },
   "files": [
     "dist",
-    "src/SvelteSEO.svelte"
+    "src/SvelteSeo.svelte"
   ],
   "husky": {
     "hooks": {

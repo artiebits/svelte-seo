@@ -10,7 +10,7 @@ export default {
   input: "src/main.js",
   output: [
     { file: pkg.module, format: "es" },
-    { file: pkg.main, format: "umd", name: "SvelteSEO" },
+    { file: pkg.main, format: "umd", name: "SvelteSeo" },
   ],
   plugins: [
     svelte({

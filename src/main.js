@@ -1,2 +1,2 @@
-import SvelteSEO from "./SvelteSEO.svelte";
-export default SvelteSEO;
+import SvelteSeo from "./SvelteSeo.svelte";
+export default SvelteSeo;
