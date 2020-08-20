@@ -86,29 +86,29 @@ Svelte SEO currently supports:
 
 <SvelteSEO
   openGraph={{
-    title: 'Open Graph Article Title',
-    description: 'Description of open graph article',
-    url: 'https://www.example.com/articles/article-title',
-    type: 'article',
+    title: "Open Graph Article Title",
+    description: "Description of open graph article",
+    type: "article",
+    url: "https://www.example.com/articles/article-title",
     article: {
-      publishedTime: '2017-06-21T23:04:13Z',
-      modifiedTime: '2018-01-21T18:04:43Z',
-      expirationTime: '2022-12-21T22:04:11Z',
-      section: 'Section II',
+      publishedTime: "2020-08-03T17:31:37Z",
+      modifiedTime: "2020-08-20T09:31:37Z",
+      expirationTime: "2025-12-21T17:31:37Z",
+      section: "Section II",
       authors: [
-        'https://www.example.com/authors/@firstnameA-lastnameA',
-        'https://www.example.com/authors/@firstnameB-lastnameB'
+        "https://www.example.com/authors/@firstnameA-lastnameA",
+        "https://www.example.com/authors/@firstnameB-lastnameB",
       ],
-      tags: ['Tag A', 'Tag B', 'Tag C']
+      tags: ["Tag A", "Tag B", "Tag C"],
     },
     images: [
       {
-        url: 'https://www.test.ie/images/cover.jpg',
+        url: "https://www.example.com/images/cover.jpg",
         width: 850,
         height: 650,
-        alt: 'Og Image Alt'
-      }
-     ]
+        alt: "Og Image Alt",
+      },
+    ],
   }}
 />
 ```
