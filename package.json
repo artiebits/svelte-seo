@@ -1,6 +1,6 @@
 {
   "name": "svelte-seo",
-  "version": "1.0.0",
+  "version": "1.0.1-beta.0",
   "svelte": "src/SvelteSeo.svelte",
   "module": "dist/index.min.mjs",
   "main": "dist/index.min.js",
@@ -12,7 +12,8 @@
     "start": "sirv dev",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "test": "run-p --race dev cy:run"
+    "test": "run-p --race dev cy:run",
+    "prepublishOnly": "yarn build"
   },
   "files": [
     "dist",
