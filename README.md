@@ -54,6 +54,7 @@ Import Svelte SEO and add the desired properties. This will render out the tags 
 | `description`                      | string                  | Sets the page meta description.                                                                                                                 |
 | `noindex`                          | boolean (default false) | Sets whether page should be indexed or not. [More Info](#no-index).                                                                             |
 | `nofollow`                         | boolean (default false) | Sets whether page should be followed or not. [More Info](#no-follow).                                                                           |
+| `keywords`                         | string                  | Set the page keywords.                                                                                                                          |
 | `canonical`                        | string                  | Set the page canonical url.                                                                                                                     |
 | `openGraph.type`                   | string                  | The type of your object. Depending on the type you specify, other properties may also be required [More Info](#open-graph).                     |
 | `openGraph.title`                  | string                  | The open graph title, this can be different than your meta title.                                                                               |

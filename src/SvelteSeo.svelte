@@ -3,6 +3,7 @@
   export let noindex = false;
   export let nofollow = false;
   export let description = undefined;
+  export let keywords = undefined;
   export let canonical = undefined;
   export let openGraph = undefined;
 </script>
@@ -21,6 +22,10 @@
 
   {#if description}
     <meta name="description" content={description} />
+  {/if}
+
+  {#if keywords}
+    <meta name="keywords" content={keywords} />
   {/if}
 
   {#if openGraph}

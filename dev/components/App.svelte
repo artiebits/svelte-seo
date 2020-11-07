@@ -37,6 +37,7 @@
 <SvelteSeo
   title="Article Page Title | Svelte SEO"
   description="Description of article page"
+  keywords="Keywords of article page"
   {openGraph} />
 
 <h1>Article Page</h1>

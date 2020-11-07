@@ -11,6 +11,11 @@ describe("SEO Meta", () => {
       "content",
       "Description of article page"
     );
+    cy.get('head meta[name="keywords"]').should(
+      "have.attr",
+      "content",
+      "Keywords of article page"
+    );
     cy.get('head meta[property="og:title"]').should(
       "have.attr",
       "content",
