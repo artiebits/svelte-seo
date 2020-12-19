@@ -99,36 +99,36 @@
   {/if}
   
   {#if twitterCard}
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image" />
     {#if twitterCard.site}
       <meta 
         name="twitter:site" 
         content={twitterCard.site}
-      >
+      />
     {/if}
     {#if twitterCard.title}
       <meta 
         name="twitter:title" 
         content={twitterCard.title}
-      >
+      />
     {/if}
     {#if twitterCard.description}
       <meta 
         name="twitter:description" 
         content={twitterCard.description}
-      >
+      />
     {/if}
     {#if twitterCard.image}
       <meta 
         name="twitter:image" 
         content={twitterCard.image}
-      >
+      />
     {/if}
     {#if twitterCard.imageAlt}
       <meta 
         name="twitter:image:alt" 
         content={twitterCard.imageAlt}
-      >
+      />
     {/if}
   {/if}
 </svelte:head>
