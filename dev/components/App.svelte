@@ -32,12 +32,22 @@
       },
     ],
   };
+
+  const twitter = {
+    site: "@username",
+    title: "Twitter Card Title",
+    description: "Description of Twitter Card",
+    image: "https://www.example.com/images/cover.jpg",
+    imageAlt: "Alt text for the card!",
+  }
 </script>
 
 <SvelteSeo
   title="Article Page Title | Svelte SEO"
   description="Description of article page"
   keywords="Keywords of article page"
-  {openGraph} />
+  {openGraph}
+  {twitter}
+/>
 
 <h1>Article Page</h1>

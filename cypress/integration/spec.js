@@ -101,5 +101,35 @@ describe("SEO Meta", () => {
         expect(tags[0].content).to.equal("650");
         expect(tags[1].content).to.equal("750");
       });
+    cy.get('head meta[name="twitter:card"]').should(
+      "have.attr",
+      "content",
+      "summary_large_image"
+    );
+    cy.get('head meta[name="twitter:site"]').should(
+      "have.attr",
+      "content",
+      "@username"
+    );
+    cy.get('head meta[name="twitter:title"]').should(
+      "have.attr",
+      "content",
+      "Twitter Card Title"
+    );
+    cy.get('head meta[name="twitter:description"]').should(
+      "have.attr",
+      "content",
+      "Description of Twitter Card"
+    );
+    cy.get('head meta[name="twitter:image"]').should(
+      "have.attr",
+      "content",
+      "https://www.example.com/images/cover.jpg"
+    );
+    cy.get('head meta[name="twitter:image:alt"]').should(
+      "have.attr",
+      "content",
+      "Alt text for the card!"
+    );
   });
 });
