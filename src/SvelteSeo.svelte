@@ -6,7 +6,7 @@
   export let keywords = undefined;
   export let canonical = undefined;
   export let openGraph = undefined;
-  export let twitterCard = undefined;
+  export let twitter = undefined;
 </script>
 
 <svelte:head>
@@ -97,37 +97,37 @@
       {/each}
     {/if}
   {/if}
-  
-  {#if twitterCard}
+
+  {#if twitter}
     <meta name="twitter:card" content="summary_large_image" />
-    {#if twitterCard.site}
-      <meta 
-        name="twitter:site" 
-        content={twitterCard.site}
+    {#if twitter.site}
+      <meta
+        name="twitter:site"
+        content={twitter.site}
       />
     {/if}
-    {#if twitterCard.title}
-      <meta 
-        name="twitter:title" 
-        content={twitterCard.title}
+    {#if twitter.title}
+      <meta
+        name="twitter:title"
+        content={twitter.title}
       />
     {/if}
-    {#if twitterCard.description}
-      <meta 
-        name="twitter:description" 
-        content={twitterCard.description}
+    {#if twitter.description}
+      <meta
+        name="twitter:description"
+        content={twitter.description}
       />
     {/if}
-    {#if twitterCard.image}
-      <meta 
-        name="twitter:image" 
-        content={twitterCard.image}
+    {#if twitter.image}
+      <meta
+        name="twitter:image"
+        content={twitter.image}
       />
     {/if}
-    {#if twitterCard.imageAlt}
-      <meta 
-        name="twitter:image:alt" 
-        content={twitterCard.imageAlt}
+    {#if twitter.imageAlt}
+      <meta
+        name="twitter:image:alt"
+        content={twitter.imageAlt}
       />
     {/if}
   {/if}
