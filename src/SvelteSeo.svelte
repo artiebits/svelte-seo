@@ -7,6 +7,7 @@
   export let canonical = undefined;
   export let openGraph = undefined;
   export let twitter = undefined;
+  export let ldJson = undefined;
 </script>
 
 <svelte:head>
@@ -130,5 +131,9 @@
         content={twitter.imageAlt}
       />
     {/if}
+  {/if}
+
+  {#if ldJson}
+    {@html "<script type=\"application/ld+json\">" + JSON.stringify({ '@context': 'https://schema.org', ...ldJson }) + "</script>"}
   {/if}
 </svelte:head>

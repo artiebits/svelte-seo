@@ -39,7 +39,19 @@
     description: "Description of Twitter Card",
     image: "https://www.example.com/images/cover.jpg",
     imageAlt: "Alt text for the card!",
-  }
+  };
+
+  const ldJson = {
+    "@type": "NewsArticle",
+    headline: "ldJson Article Headline",
+    image: [
+      "https://www.example.com/images/ld-image-article-title-01.jpg",
+      "https://www.example.com/images/ld-image-article-title-02.jpg",
+      "https://www.example.com/images/ld-image-article-title-03.jpg",
+    ],
+    datePublished: "2020-08-03T17:31:37Z",
+    dateModified: "2020-08-20T09:31:37Z",
+  };
 </script>
 
 <SvelteSeo
@@ -48,6 +60,7 @@
   keywords="Keywords of article page"
   {openGraph}
   {twitter}
+  {ldJson}
 />
 
 <h1>Article Page</h1>
