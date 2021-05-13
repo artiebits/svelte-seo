@@ -17,7 +17,7 @@ export interface SvelteSeoProps {
 
   twitter?: Twitter;
 
-  ldJson?: any;
+  jsonLd?: any;
 }
 
 export interface OpenGraph {

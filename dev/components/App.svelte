@@ -1,6 +1,7 @@
 <script>
   import SvelteSeo from "../../src/SvelteSeo.svelte";
 
+
   const openGraph = {
     title: "Open Graph Article Title",
     description: "Description of open graph article",
@@ -41,7 +42,7 @@
     imageAlt: "Alt text for the card!",
   };
 
-  const ldJson = {
+  const jsonLd = {
     "@type": "NewsArticle",
     headline: "ldJson Article Headline",
     image: [
@@ -60,7 +61,7 @@
   keywords="Keywords of article page"
   {openGraph}
   {twitter}
-  {ldJson}
+  {jsonLd}
 />
 
 <h1>Article Page</h1>

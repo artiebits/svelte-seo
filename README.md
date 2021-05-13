@@ -61,7 +61,7 @@ Import Svelte SEO and add the desired properties. This will render out the tags 
 | `openGraph.title`                  | string                  | The open graph title, this can be different than your meta title.                                                                                                                                                                                                                                                                                    |
 | `openGraph.description`            | string                  | The open graph description, this can be different than your meta description.                                                                                                                                                                                                                                                                        |
 | `openGraph.url`                    | string                  | The canonical URL of your object that will be used as its permanent ID in the graph.                                                                                                                                                                                                                                                                 |
-| `openGraph.images`                 | array                   | An array of images (object) to be used as a preview. If multiple supplied you can choose one when sharing. [See Examples](#open-graph-examples)                                                                                                                                                                                                      |
+| `openGraph.images`                 | object[]                | An array of images to be used as a preview. If multiple supplied you can choose one when sharing. [See Examples](#open-graph-examples)                                                                                                                                                                                                               |
 | `openGraph.article.publishedTime`  | datetime                | When the article was first published. [See Examples](#open-graph-examples).                                                                                                                                                                                                                                                                          |
 | `openGraph.article.modifiedTime`   | datetime                | When the article was last changed.                                                                                                                                                                                                                                                                                                                   |
 | `openGraph.article.expirationTime` | datetime                | When the article is out of date after.                                                                                                                                                                                                                                                                                                               |
@@ -73,6 +73,7 @@ Import Svelte SEO and add the desired properties. This will render out the tags 
 | `twitter.description`              | string                  | A description that concisely summarizes the content as appropriate for presentation within a Tweet. You should not re-use the title as the description or use this field to describe the general services provided by the website. Note- iOS, Android: Not displayed ; Web: Truncated to three lines in timeline and expanded Tweet                  |
 | `twitter.image`                    | string(url)             | A URL to a unique image representing the content of the page. Images for this Card support an aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Images must be less than 5MB in size. JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF will be used. SVG is not supported. |
 | `twitter.imageAlt`                 | string                  | A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters.                                                                                                                                                                                                               |
+| `jsonLd`                           | object                  | Data in `ld+json` format. [See Examples](#json-dl-example).                                                                                                                                                                                                                                                                                          |
 
 ### Open Graph
 
@@ -165,6 +166,35 @@ Allows Twitter Link Preview Cards (otherwise known as a Summary Card with Large 
   }}
 />
 ```
+
+### JSON-LD
+
+JSON-LD allow for more customisized and rich representation in for example search results.
+
+To discover all the different content types JSON-LD offers check out: https://developers.google.com/search/docs/guides/search-gallery
+
+#### JSON-LD Example
+
+```svelte
+<script>
+  import SvelteSeo from "svelte-seo";
+</script>
+
+<SvelteSeo
+  jsonLd={{
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What day is it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's Wednesday"
+      }
+    }]
+  }}
+/>
+```
+
 
 ## Acknowledgements
 

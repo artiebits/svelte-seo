@@ -7,7 +7,7 @@
   export let canonical = undefined;
   export let openGraph = undefined;
   export let twitter = undefined;
-  export let ldJson = undefined;
+  export let jsonLd = undefined;
 </script>
 
 <svelte:head>
@@ -133,7 +133,7 @@
     {/if}
   {/if}
 
-  {#if ldJson}
-    {@html "<script type=\"application/ld+json\">" + JSON.stringify({ '@context': 'https://schema.org', ...ldJson }) + "</script>"}
+  {#if jsonLd}
+    {@html "<script type=\"application/ld+json\">" + JSON.stringify({ '@context': 'https://schema.org', ...jsonLd }) + "</script>"}
   {/if}
 </svelte:head>
