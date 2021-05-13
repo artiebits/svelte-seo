@@ -4,6 +4,7 @@
   "svelte": "src/SvelteSeo.svelte",
   "module": "dist/index.min.mjs",
   "main": "dist/index.min.js",
+  "types": "types/index.d.ts",
   "repository": "git@github.com:artiebits/svelte-seo.git",
   "license": "MIT",
   "scripts": {
@@ -17,7 +18,8 @@
   },
   "files": [
     "dist",
-    "src/SvelteSeo.svelte"
+    "src/SvelteSeo.svelte",
+    "types"
   ],
   "husky": {
     "hooks": {
