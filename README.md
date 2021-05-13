@@ -169,7 +169,7 @@ Allows Twitter Link Preview Cards (otherwise known as a Summary Card with Large 
 
 ### JSON-LD
 
-JSON-LD allow for more customisized and rich representation in for example search results.
+JSON-LD allow for more customisized and rich representation for example in search results.
 
 To discover all the different content types JSON-LD offers check out: https://developers.google.com/search/docs/guides/search-gallery
 
