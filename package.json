@@ -46,6 +46,7 @@
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-terser": "^6.1.0",
+    "schema-dts": "^0.8.2",
     "sirv-cli": "^1.0.6",
     "svelte": "^3.0.0"
   },

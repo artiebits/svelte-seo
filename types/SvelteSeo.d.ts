@@ -1,4 +1,5 @@
 /// <reference types="svelte" />
+import { Thing, WithContext } from "schema-dts";
 import { SvelteComponentTyped } from "svelte";
 
 export interface SvelteSeoProps {
@@ -17,7 +18,7 @@ export interface SvelteSeoProps {
 
   twitter?: Twitter;
 
-  jsonLd?: any;
+  jsonLd?: Thing | WithContext<Thing>;
 }
 
 export interface OpenGraph {
