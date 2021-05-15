@@ -131,5 +131,23 @@ describe("SEO Meta", () => {
       "content",
       "Alt text for the card!"
     );
+
+    cy.get('head script[type="application/ld+json"]')
+      .should("have.length", 1)
+      .then((tags) => {
+        const jsonLD = JSON.parse(tags[0].innerHTML);
+        expect(jsonLD).to.deep.equal({
+          "@context": "https://schema.org",
+          "@type": "NewsArticle",
+          headline: "ldJson Article Headline",
+          image: [
+            "https://www.example.com/images/ld-image-article-title-01.jpg",
+            "https://www.example.com/images/ld-image-article-title-02.jpg",
+            "https://www.example.com/images/ld-image-article-title-03.jpg",
+          ],
+          datePublished: "2020-08-03T17:31:37Z",
+          dateModified: "2020-08-20T09:31:37Z",
+        });
+      });
   });
 });
