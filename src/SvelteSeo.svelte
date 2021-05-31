@@ -26,6 +26,10 @@
     <meta name="description" content={description} />
   {/if}
 
+  {#if canonical}
+    <link rel="canonical" href={canonical}/>
+  {/if}
+
   {#if keywords}
     <meta name="keywords" content={keywords} />
   {/if}
