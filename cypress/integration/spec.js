@@ -16,6 +16,11 @@ describe("SEO Meta", () => {
       "content",
       "Keywords of article page"
     );
+    cy.get('head link[rel="canonical"]').should(
+      "have.attr",
+      "href",
+      "https://www.example.com"
+    );
     cy.get('head meta[property="og:title"]').should(
       "have.attr",
       "content",

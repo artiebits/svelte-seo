@@ -59,6 +59,7 @@
   title="Article Page Title | Svelte SEO"
   description="Description of article page"
   keywords="Keywords of article page"
+  canonical="https://www.example.com"
   {openGraph}
   {twitter}
   {jsonLd}
