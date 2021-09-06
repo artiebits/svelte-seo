@@ -141,3 +141,4 @@
     {@html `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", ...jsonLd }) + "<"}/script>`}
   {/if}
 </svelte:head>
+<slot></slot>
