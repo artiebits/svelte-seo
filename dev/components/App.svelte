@@ -63,6 +63,8 @@
   {openGraph}
   {twitter}
   {jsonLd}
-/>
+>
+  <link rel="manifest" href="/manifest.json" />
+</SvelteSeo>
 
 <h1>Article Page</h1>

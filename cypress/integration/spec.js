@@ -155,4 +155,12 @@ describe("SEO Meta", () => {
         });
       });
   });
+
+  it("renders child elements of SvelteSEO", () => {
+    cy.get('head link[rel="manifest"]').should(
+      "have.attr",
+      "href",
+      "/manifest.json"
+    );
+  });
 });
