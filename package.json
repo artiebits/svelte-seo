@@ -1,6 +1,6 @@
 {
   "name": "svelte-seo",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "svelte": "src/SvelteSeo.svelte",
   "module": "dist/index.min.mjs",
   "main": "dist/index.min.js",
