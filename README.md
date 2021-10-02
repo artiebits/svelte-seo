@@ -15,6 +15,9 @@ Svelte SEO is a plugin that makes managing your SEO easier in Svelte projects.
     - [Basic Example](#basic-example)
     - [Article Example](#article-example)
   - [Twitter Link Preview Card](#twitter-link-preview-card)
+    - [Twitter Example](#twitter-example)
+  - [JSON-LD](#json-ld)
+    - [JSON-LD Example](#json-ld-example)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
@@ -182,15 +185,31 @@ To discover all the different content types JSON-LD offers check out: https://de
 
 <SvelteSeo
   jsonLd={{
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What day is it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It's Wednesday"
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': 'https://example.com/article'
+    },
+    headline: 'Article headline',
+    image: [
+      'https://example.com/photos/1x1/photo.jpg',
+      'https://example.com/photos/4x3/photo.jpg',
+      'https://example.com/photos/16x9/photo.jpg'
+    ],
+    datePublished: '2020-08-03T17:31:37Z',
+    dateModified: '2020-08-20T09:31:37Z',
+    author: {
+      '@type': 'Person',
+      name: 'John Doe'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Google',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://example.com/logo.jpg'
       }
-    }]
+    }
   }}
 />
 ```
