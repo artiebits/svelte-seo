@@ -23,6 +23,12 @@ Svelte SEO is a plugin that makes managing your SEO easier in Svelte projects.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+**Sponsor Svelte SEO**
+
+If you rely on Svelte SEO, please consider supporting it.
+
+<a href="https://www.buymeacoffee.com/artiebits" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 ## Installing
 
 Install using `yarn`:
@@ -213,7 +219,6 @@ To discover all the different content types JSON-LD offers check out: https://de
   }}
 />
 ```
-
 
 ## Acknowledgements
 
