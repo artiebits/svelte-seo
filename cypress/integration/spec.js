@@ -180,6 +180,102 @@ describe("SEO Meta", () => {
     );
   });
 
+  it("renders Twitter Card tags for summary type card", () => {
+    cy.visit("/summary");
+    cy.get('head meta[name="twitter:card"]').should(
+      "have.attr",
+      "content",
+      "summary"
+    );
+
+    cy.get('head meta[name="twitter:site"]').should(
+      "have.attr",
+      "content",
+      "@username"
+    );
+
+    cy.get('head meta[name="twitter:title"]').should(
+      "have.attr",
+      "content",
+      "Twitter Card Title"
+    );
+
+    cy.get('head meta[name="twitter:description"]').should(
+      "have.attr",
+      "content",
+      "Description of Twitter Card"
+    );
+
+    cy.get('head meta[name="twitter:image"]').should(
+      "have.attr",
+      "content",
+      "https://www.example.com/images/cover.jpg"
+    );
+
+    cy.get('head meta[name="twitter:image:alt"]').should(
+      "have.attr",
+      "content",
+      "Alt text for the card!"
+    );
+  });
+
+  it("renders Twitter Card tags for player type card", () => {
+    cy.visit("/player");
+    cy.get('head meta[name="twitter:card"]').should(
+      "have.attr",
+      "content",
+      "player"
+    );
+
+    cy.get('head meta[name="twitter:site"]').should(
+      "have.attr",
+      "content",
+      "@username"
+    );
+
+    cy.get('head meta[name="twitter:title"]').should(
+      "have.attr",
+      "content",
+      "Twitter Card Title"
+    );
+
+    cy.get('head meta[name="twitter:description"]').should(
+      "have.attr",
+      "content",
+      "Description of Twitter Card"
+    );
+
+    cy.get('head meta[name="twitter:image"]').should(
+      "have.attr",
+      "content",
+      "https://www.example.com/images/cover.jpg"
+    );
+
+    cy.get('head meta[name="twitter:image:alt"]').should(
+      "have.attr",
+      "content",
+      "Alt text for the card!"
+    );
+
+    cy.get('head meta[name="twitter:player"]').should(
+      "have.attr",
+      "content",
+      "https://www.example.com/videos/example-video"
+    );
+
+    cy.get('head meta[name="twitter:player:width"]').should(
+      "have.attr",
+      "content",
+      "200"
+    );
+
+    cy.get('head meta[name="twitter:player:height"]').should(
+      "have.attr",
+      "content",
+      "100"
+    );
+  });
+
   it("renders child elements of SvelteSEO", () => {
     cy.get('head link[rel="manifest"]').should(
       "have.attr",
