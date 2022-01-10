@@ -36,7 +36,6 @@
   const twitter = () => {
     const playerPath = "/player" === window.location.pathname;
     const summaryPath = "/summary" === window.location.pathname;
-    console.log((playerPath && 100) || undefined);
     return {
       card: (playerPath && "player") || (summaryPath && "summary") || undefined,
       site: "@username",
