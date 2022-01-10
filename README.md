@@ -47,11 +47,13 @@ Import Svelte SEO and add the desired properties. This will render out the tags 
 
 ```svelte
 <script>
+  import SvelteSeo from "svelte-seo";
 </script>
 
 <SvelteSeo
   title="Simple Usage Example"
-  description="A short description goes here." />
+  description="A short description goes here."
+/>
 ```
 
 ### Svelte SEO options
@@ -75,15 +77,15 @@ Import Svelte SEO and add the desired properties. This will render out the tags 
 | `openGraph.article.authors`        | string[]                | Writers of the article.                                                                                                                                                                                                                                                                                                                              |
 | `openGraph.article.section`        | string                  | A high-level section name. E.g. Technology                                                                                                                                                                                                                                                                                                           |
 | `openGraph.article.tags`           | string[]                | Tag words associated with this article.                                                                                                                                                                                                                                                                                                              |
-| `twitter.card`                     | string                  | Card type (one of `summary`, `summary_large_image`, `player`), defaults to `summary_large_image`                                                                                                                                                                                                                                                     |
+| `twitter.card`                     | string                  | Card type (one of `summary`, `summary_large_image`, `player`), defaults to `summary_large_image`       |
 | `twitter.site`                     | string                  | The Twitter @username the card should be attributed to.                                                                                                                                                                                                                                                                                              |
 | `twitter.title`                    | string                  | A concise title for the related content. Note- iOS, Android: Truncated to two lines in timeline and expanded Tweet ; Web: Truncated to one line in timeline and expanded Tweet                                                                                                                                                                       |
 | `twitter.description`              | string                  | A description that concisely summarizes the content as appropriate for presentation within a Tweet. You should not re-use the title as the description or use this field to describe the general services provided by the website. Note- iOS, Android: Not displayed ; Web: Truncated to three lines in timeline and expanded Tweet                  |
 | `twitter.image`                    | string(url)             | A URL to a unique image representing the content of the page. Images for this Card support an aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Images must be less than 5MB in size. JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF will be used. SVG is not supported. |
 | `twitter.imageAlt`                 | string                  | A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters.                                                                                                                                                                                                               |
-| `twitter.player`                   | string                  | Url for the video to play in the card. Only used with the `player` type card.                                                                                                                                                                                                                                                                        |
-| `twitter.playerWidth`              | number                  | Width of the player that plays the content on twitter (in Pixels). Only used with the `player` type card.                                                                                                                                                                                                                                            |
-| `twitter.playerHeight`             | number                  | Height of the player that plays the content on twtter (in Pixels). ONly used with the `player` type card.                                                                                                                                                                                                                                            |
+| `twitter.player`                   | string                  | Url for the video to play in the card. Only used with the `player` type card.  |
+| `twitter.playerWidth`              | number                  | Width of the player that plays the content on twitter (in Pixels). Only used with the `player` type card.  |
+| `twitter.playerHeight`             | number                  | Height of the player that plays the content on twtter (in Pixels). ONly used with the `player` type card.    |    
 | `jsonLd`                           | object                  | Data in `ld+json` format. [See Examples](#json-dl-example).                                                                                                                                                                                                                                                                                          |
 
 ### Open Graph
@@ -99,10 +101,13 @@ Svelte SEO currently supports:
 
 ```svelte
 <script>
+  import SvelteSeo from "svelte-seo";
 </script>
 
 <SvelteSeo
-  openGraph={  description: 'Open Graph Description',
+  openGraph={{
+    title: 'Open Graph Title',
+    description: 'Open Graph Description',
     url: 'https://www.example.com/page',
     type: 'website',
     images: [
@@ -114,17 +119,19 @@ Svelte SEO currently supports:
       }
      ]
   }}
-/>} />
+/>
 ```
 
 #### Article Example
 
 ```svelte
 <script>
+  import SvelteSeo from "svelte-seo";
 </script>
 
 <SvelteSeo
-  openGraph={tle",
+  openGraph={{
+    title: "Open Graph Article Title",
     description: "Description of open graph article",
     type: "article",
     url: "https://www.example.com/articles/article-title",
@@ -148,7 +155,7 @@ Svelte SEO currently supports:
       },
     ],
   }}
-/>} />
+/>
 ```
 
 ### Twitter Link Preview Card
@@ -159,15 +166,18 @@ Allows Twitter Link Preview Cards (otherwise known as a Summary Card with Large 
 
 ```svelte
 <script>
+  import SvelteSeo from "svelte-seo";
 </script>
 
 <SvelteSeo
-  twitter={ "Twitter Card Title",
+  twitter={{
+    site: "@username",
+    title: "Twitter Card Title",
     description: "Description of Twitter Card",
     image: "https://www.example.com/images/cover.jpg",
     imageAlt: "Alt text for the card!",
   }}
-/>} />
+/>
 ```
 
 ### JSON-LD
@@ -180,10 +190,13 @@ To discover all the different content types JSON-LD offers check out: https://de
 
 ```svelte
 <script>
+  import SvelteSeo from "svelte-seo";
 </script>
 
 <SvelteSeo
-  jsonLd={ntityOfPage: {
+  jsonLd={{
+    '@type': 'Article',
+    mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': 'https://example.com/article'
     },
@@ -208,7 +221,7 @@ To discover all the different content types JSON-LD offers check out: https://de
       }
     }
   }}
-/>} />
+/>
 ```
 
 ## Acknowledgements
