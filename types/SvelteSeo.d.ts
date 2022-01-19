@@ -47,12 +47,18 @@ export interface OpenGraphImage {
 }
 
 export interface Twitter {
+  card?: TwitterCard;
   site?: string;
   title?: string;
   description?: string;
   image?: string;
   imageAlt?: string;
+  player?: string;
+  playerWidth?: number;
+  playerHeight?: number;
 }
+
+export type TwitterCard = 'summary' | 'summary_large_image' | 'player'
 
 export default class SvelteSeo extends SvelteComponentTyped<
   SvelteSeoProps,

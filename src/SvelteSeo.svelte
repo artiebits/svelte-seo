@@ -104,7 +104,7 @@
   {/if}
 
   {#if twitter}
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content={twitter.card || "summary_large_image" }/>
     {#if twitter.site}
       <meta
         name="twitter:site"
@@ -129,10 +129,28 @@
         content={twitter.image}
       />
     {/if}
-    {#if twitter.imageAlt}
+     {#if twitter.imageAlt}
       <meta
         name="twitter:image:alt"
         content={twitter.imageAlt}
+      />
+    {/if}
+    {#if twitter.player}
+      <meta
+        name="twitter:player"
+        content={twitter.player}
+      />
+    {/if}
+     {#if twitter.playerWidth}
+      <meta
+        name="twitter:player:width"
+        content={twitter.playerWidth}
+      />
+    {/if}
+    {#if twitter.playerHeight}
+      <meta
+        name="twitter:player:height"
+        content={twitter.playerHeight}
       />
     {/if}
   {/if}
