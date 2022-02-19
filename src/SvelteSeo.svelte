@@ -8,6 +8,13 @@
   export let openGraph = undefined;
   export let twitter = undefined;
   export let jsonLd = undefined;
+
+  if (title){
+    let titleLength = title.split("").length;
+    if (titleLength > 72 || titleLength < 50){
+      console.warn("[SvelteSeo] Recommended length of title tag is between 50 and 70 characters");
+    }
+  }
 </script>
 
 <svelte:head>
