@@ -15,6 +15,13 @@
       console.warn("[SvelteSeo] Recommended length of title tag is between 50 and 70 characters");
     }
   }
+
+  if (description){
+    let descriptionLength = description.split("").length;
+    if (descriptionLength < 50 || description > 160){
+      console.warn("[SvelteSeo] Recommended length of description tag is between 50 and 160 characters");
+    }
+  }
 </script>
 
 <svelte:head>
