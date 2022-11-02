@@ -1,3 +1,4 @@
 declare interface SvelteSeo {
-    title?: string
+    title?: string,
+    description?: string
 }

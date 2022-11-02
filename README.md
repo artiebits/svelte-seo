@@ -48,4 +48,6 @@ Import SvelteSEO and add the desired properties. This will render out the tags i
 
 | Property | Type | Default | Description |
 -----------| ---------| -----------| ---------|
-| title | string | undefined | defines the title of the document | 
+| title | string | undefined | defines the title of the document |
+| description | string | undefined | Define a description of your web page |
+ 
