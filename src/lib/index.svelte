@@ -1,6 +1,10 @@
 <script>
-    import SvelteSEO from "$lib";
+    /** @type {SvelteSeo["title"]}*/
+    export let title = undefined;
 </script>
 
-
-<SvelteSEO/>
+<svelte:head>
+    {#if title}
+        <title>{title}</title>
+    {/if}
+</svelte:head>

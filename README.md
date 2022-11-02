@@ -1,38 +1,51 @@
-# create-svelte
+# Svelte SEO
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[![Build Status](https://travis-ci.org/artiebits/svelte-seo.svg?branch=master)](https://travis-ci.org/artiebits/svelte-seo)
 
-## Creating a project
+Svelte SEO is a plugin that makes managing your SEO easier in Svelte projects.
 
-If you're seeing this, you've probably already done this step. Congrats!
+**Sponsor Svelte SEO**
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+If you rely on Svelte SEO, please consider supporting it.
 
-# create a new project in my-app
-npm create svelte@latest my-app
+<a href="https://www.buymeacoffee.com/artiebits" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+## Installing
+
+Do note that this library must be installed as a `devDependency`
+
+Install using `yarn`:
+
+`yarn add -D svelte-seo`
+
+or `npm`:
+
+`npm install -D svelte-seo`
+
+or `pnpm`
+
+`pnpm install -D svelte-seo`
+
+
+## Usage
+
+### Add SEO to Page
+
+Import SvelteSEO and add the desired properties. This will render out the tags in the `<head>` for SEO. At a bare minimum, you should add a title and description.
+
+```svelte
+<script>
+  import SvelteSeo from "svelte-seo";
+</script>
+
+<SvelteSeo
+  title="Simple Usage Example"
+  description="A short description goes here."
+/>
 ```
 
-## Developing
+### Svelte SEO options
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+| Property | Type | Default | Description |
+-----------| ---------| -----------| ---------|
+| title | string | undefined | defines the title of the document | 
