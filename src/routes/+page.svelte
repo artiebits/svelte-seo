@@ -4,4 +4,7 @@
 
 <SvelteSeo
     title="Article Page Title | Svelte SEO"
+    description="Description of article page"
+    base="/"
+    applicationName="Svelte Seo"
 />
