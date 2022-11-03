@@ -13,6 +13,12 @@
 
     /**@type {SvelteSeo["themeColor"]}*/
     export let themeColor = undefined;
+
+    /**@type {SvelteSeo["nofollow"]}*/
+    export let nofollow = false;
+
+    /**@type {SvelteSeo["noindex"]}*/
+    export let noindex = false;
 </script>
 
 <svelte:head>
@@ -35,4 +41,7 @@
     {#if base}
         <base href="{base}"/>
     {/if}
+    
+    <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
+    <meta name="googlebot" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
 </svelte:head>
