@@ -59,3 +59,5 @@ Import SvelteSEO and add the desired properties. This will render out the tags i
 | notranslate | Boolean | false | Tells Google not to provide a translation for this document | 
 | canonical | string | undefined | Helps prevent duplicate content issues |
 | amp | string | undefined | Links to an AMP HTML version of the current document |
+| manifest | string | undefined | Links to a JSON file that specifies "installation" credentials for the web applications |
+| languageAlternates | Array<{ hreflang: string, href: string }> | undefined | Gives a reference to a location in your document that may be in another language |

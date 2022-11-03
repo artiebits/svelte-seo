@@ -11,4 +11,15 @@
     nositelinkssearchbox={true}
     notranslate="{true}"
     canonical="https://www.example.com"
+    manifest="manifest.json"
+    languageAlternates={[
+        {
+            hreflang: "en-US",
+            href: "example.com"
+        },
+        {
+            hreflang: "en-GB",
+            href: "example.com"
+        }
+    ]}
 />

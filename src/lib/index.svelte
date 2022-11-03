@@ -31,6 +31,12 @@
 
     /** @type {SvelteSeo["amp"]}*/
     export let amp = undefined;
+
+    /** @type {SvelteSeo["manifest"]}*/
+    export let manifest = undefined;
+
+    /**@type {SvelteSeo["languageAlternates"]}*/
+    export let languageAlternates = undefined;
 </script>
 
 <svelte:head>
@@ -48,6 +54,16 @@
 
     {#if amp}
         <link rel="amphtml" href={amp}>
+    {/if}
+
+    {#if manifest}
+        <link rel="manifest" href="{manifest}">
+    {/if}
+
+    {#if languageAlternates}
+        {#each languageAlternates as { href, hreflang}}
+        <link rel="alternate" {href} {hreflang}>
+        {/each}
     {/if}
 
     {#if applicationName}

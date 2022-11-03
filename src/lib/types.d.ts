@@ -9,5 +9,7 @@ declare interface SvelteSeo {
     nositelinkssearchbox: Boolean,
     notranslate: Boolean,
     canonical?: string,
-    amp?: string
+    amp?: string,
+    manifest?: string,
+    languageAlternates?: Array<{ hreflang: string, href: string }>
 }
