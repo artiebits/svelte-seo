@@ -2,6 +2,7 @@ declare interface SvelteSeo {
     title?: string,
     description?: string,
     base?: string,
+    keywords?:  string,
     applicationName?: string,
     themeColor?: string,
     nofollow: Boolean,

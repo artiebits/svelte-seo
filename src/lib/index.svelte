@@ -5,6 +5,9 @@
     /** @type {SvelteSeo["description"]}*/
     export let description = undefined;
 
+    /**@type {SvelteSeo["keywords"]}*/
+    export let keywords = undefined;
+
     /** @type {SvelteSeo["base"]}*/
     export let base = undefined;
 
@@ -50,6 +53,10 @@
 
     {#if canonical}
         <link rel="canonical" href={canonical}/>
+    {/if}
+
+    {#if keywords}
+    <meta name="keywords" content={keywords} />
     {/if}
 
     {#if amp}

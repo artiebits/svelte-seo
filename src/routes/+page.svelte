@@ -5,6 +5,7 @@
 <SvelteSeo
     title="Article Page Title | Svelte SEO"
     description="Description of article page"
+    keywords="svelte seo, svelte"
     base="/"
     applicationName="Svelte Seo"
     themeColor="red"
