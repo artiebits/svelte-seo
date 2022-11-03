@@ -5,5 +5,6 @@ declare interface SvelteSeo {
     applicationName?: string,
     themeColor?: string,
     nofollow: Boolean,
-    noindex: Boolean
+    noindex: Boolean,
+    nositelinkssearchbox: Boolean
 }

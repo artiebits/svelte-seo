@@ -19,6 +19,8 @@
 
     /**@type {SvelteSeo["noindex"]}*/
     export let noindex = false;
+
+    export let nositelinkssearchbox = false;
 </script>
 
 <svelte:head>
@@ -44,4 +46,8 @@
     
     <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
     <meta name="googlebot" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
+
+    {#if nositelinkssearchbox}
+        <meta name="google" content="nositelinkssearchbox">
+    {/if}
 </svelte:head>

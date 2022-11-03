@@ -54,4 +54,5 @@ Import SvelteSEO and add the desired properties. This will render out the tags i
 | applicationName | string | undefined | Name of web application (only should be used if the website is used as an app) |
 | themeColor | string | undefined | Theme color for your website |
 | noindex | Boolean | false | Sets whether page should be indexed or not. [More Info](#no-index) |
-| nofollow | Boolean | false | Sets whether page should be followed or not. [More Info](#no-follow) | 
+| nofollow | Boolean | false | Sets whether page should be followed or not. [More Info](#no-follow) |
+| nositelinkssearchbox | Boolean | false | Tells Google not to show the sitelinks search box | 

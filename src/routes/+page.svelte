@@ -8,4 +8,5 @@
     base="/"
     applicationName="Svelte Seo"
     themeColor="red"
+    nositelinkssearchbox={true}
 />
