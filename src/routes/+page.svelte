@@ -7,4 +7,5 @@
     description="Description of article page"
     base="/"
     applicationName="Svelte Seo"
+    themeColor="red"
 />
