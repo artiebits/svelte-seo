@@ -6,5 +6,6 @@ declare interface SvelteSeo {
     themeColor?: string,
     nofollow: Boolean,
     noindex: Boolean,
-    nositelinkssearchbox: Boolean
+    nositelinkssearchbox: Boolean,
+    notranslate: Boolean,
 }

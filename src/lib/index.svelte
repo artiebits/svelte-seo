@@ -20,7 +20,11 @@
     /**@type {SvelteSeo["noindex"]}*/
     export let noindex = false;
 
+    /**@type {SvelteSeo["nositelinkssearchbox"]}*/
     export let nositelinkssearchbox = false;
+
+    /** @type {SvelteSeo["notranslate"]}*/
+    export let notranslate = false;
 </script>
 
 <svelte:head>
@@ -49,5 +53,9 @@
 
     {#if nositelinkssearchbox}
         <meta name="google" content="nositelinkssearchbox">
+    {/if}
+
+    {#if notranslate}
+        <meta name="google" content="notranslate">
     {/if}
 </svelte:head>

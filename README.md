@@ -55,4 +55,5 @@ Import SvelteSEO and add the desired properties. This will render out the tags i
 | themeColor | string | undefined | Theme color for your website |
 | noindex | Boolean | false | Sets whether page should be indexed or not. [More Info](#no-index) |
 | nofollow | Boolean | false | Sets whether page should be followed or not. [More Info](#no-follow) |
-| nositelinkssearchbox | Boolean | false | Tells Google not to show the sitelinks search box | 
+| nositelinkssearchbox | Boolean | false | Tells Google not to show the sitelinks search box |
+| notranslate | Boolean | false | Tells Google not to provide a translation for this document | 
