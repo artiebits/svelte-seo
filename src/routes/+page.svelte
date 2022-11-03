@@ -10,4 +10,5 @@
     themeColor="red"
     nositelinkssearchbox={true}
     notranslate="{true}"
+    canonical="https://www.example.com"
 />

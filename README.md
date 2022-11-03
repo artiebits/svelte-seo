@@ -57,3 +57,5 @@ Import SvelteSEO and add the desired properties. This will render out the tags i
 | nofollow | Boolean | false | Sets whether page should be followed or not. [More Info](#no-follow) |
 | nositelinkssearchbox | Boolean | false | Tells Google not to show the sitelinks search box |
 | notranslate | Boolean | false | Tells Google not to provide a translation for this document | 
+| canonical | string | undefined | Helps prevent duplicate content issues |
+| amp | string | undefined | Links to an AMP HTML version of the current document |

@@ -25,6 +25,12 @@
 
     /** @type {SvelteSeo["notranslate"]}*/
     export let notranslate = false;
+
+    /** @type {SvelteSeo["canonical"]}*/
+    export let canonical = undefined;
+
+    /** @type {SvelteSeo["amp"]}*/
+    export let amp = undefined;
 </script>
 
 <svelte:head>
@@ -34,6 +40,14 @@
     
     {#if description}
         <meta name="description" content={description}/>
+    {/if}
+
+    {#if canonical}
+        <link rel="canonical" href={canonical}/>
+    {/if}
+
+    {#if amp}
+        <link rel="amphtml" href={amp}>
     {/if}
 
     {#if applicationName}

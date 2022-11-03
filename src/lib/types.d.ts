@@ -8,4 +8,6 @@ declare interface SvelteSeo {
     noindex: Boolean,
     nositelinkssearchbox: Boolean,
     notranslate: Boolean,
+    canonical?: string,
+    amp?: string
 }
