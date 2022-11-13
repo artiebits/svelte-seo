@@ -30,10 +30,11 @@ interface Twitter {
     playerHeight?: string,
     playerStream?: string,
     appNameIphone?: string,
-    appIdPhone?: string,
+    appIdIphone?: string,
     appUrlIphone?: string,
     appNameIpad?: string,
     appIdIpad?: string,
+    appNameGoogleplay?: string,
     appIdGoogleplay?: string,
     appUrlGoogleplay?: string
 }

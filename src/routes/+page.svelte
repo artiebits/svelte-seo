@@ -1,40 +1,22 @@
 <script>
-    import SvelteSeo from "$lib";
-
-    const SEO = {
-        title: "Article Page Title | Svelte SEO",
-        description: "Description of article page",
-        keywords: ["svelte seo","svelte","sveltekit"],
-        canonical: "https://www.example.com"
-    }
+    import SvelteSEO from "$lib";
+    import SEO from "./";
 </script>
 
-<SvelteSeo
+
+<SvelteSEO
     title={SEO.title}
     description={SEO.description}
     keywords={SEO.keywords.toString()}
-    base="/"
-    applicationName="Svelte Seo"
-    themeColor="red"
-    nositelinkssearchbox={true}
-    notranslate="{true}"
+    base={SEO.base}
+    applicationName={SEO.applicationName},
+    themeColor={SEO.themeColor},
+    nositelinkssearchbox={SEO.nositelinkssearchbox}
+    notranslate={SEO.notranslate}
     canonical={SEO.canonical}
-    manifest="manifest.json"
-    languageAlternates={[
-        {
-            hreflang: "en-US",
-            href: "example.com"
-        },
-        {
-            hreflang: "en-GB",
-            href: "example.com"
-        }
-    ]}
+    amp={SEO.amp}
+    manifest={SEO.manifest}
+    languageAlternates={SEO.languageAlternates}
 
-
-    twitter={{
-        title: SEO.title,
-        card: "player",
-        
-    }}
+    twitter={SEO.twitter}
 />

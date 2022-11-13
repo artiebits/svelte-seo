@@ -102,7 +102,7 @@
 
     {#if twitter}
         {#each Object.entries(twitter) as [ key, value ]}
-            {@const underscoredKey = key.replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase()}
+            {@const underscoredKey = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
             <meta name="twitter:{underscoredKey}" content="{value}"/>
         {/each}
     {/if}
