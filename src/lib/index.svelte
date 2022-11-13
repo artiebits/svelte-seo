@@ -40,6 +40,10 @@
 
     /**@type {SvelteSeo["languageAlternates"]}*/
     export let languageAlternates = undefined;
+
+    /**@type {SvelteSeo['twitter']}*/
+    export let twitter = undefined;
+    
 </script>
 
 <svelte:head>
@@ -94,5 +98,12 @@
 
     {#if notranslate}
         <meta name="google" content="notranslate">
+    {/if}
+
+    {#if twitter}
+        {#each Object.entries(twitter) as [ key, value ]}
+            {@const underscoredKey = key.replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase()}
+            <meta name="twitter:{underscoredKey}" content="{value}"/>
+        {/each}
     {/if}
 </svelte:head>
