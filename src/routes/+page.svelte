@@ -19,4 +19,7 @@
     languageAlternates={SEO.languageAlternates}
 
     twitter={SEO.twitter}
+
+    openGraph={SEO.openGraph}
+
 />

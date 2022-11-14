@@ -43,6 +43,14 @@
 
     /**@type {SvelteSeo['twitter']}*/
     export let twitter = undefined;
+
+    /**@type {SvelteSeo['openGraph']}*/
+    export let openGraph = undefined;
+
+    /**@type {SvelteSeo['facebook']}*/
+    export let facebook = undefined;
+
+    import OpenGraphComponent from "./openGraph.svelte";
     
 </script>
 
@@ -88,6 +96,10 @@
     {#if base}
         <base href="{base}"/>
     {/if}
+
+    {#if facebook?.appId}
+        <meta property="fb:app_id" content="{facebook.appId}"/>
+    {/if}
     
     <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
     <meta name="googlebot" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
@@ -102,8 +114,16 @@
 
     {#if twitter}
         {#each Object.entries(twitter) as [ key, value ]}
-            {@const underscoredKey = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
-            <meta name="twitter:{underscoredKey}" content="{value}"/>
+            {@const transformed = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
+            <!-- The `transformed` variable changecs eg, twitter.title into twitter:title
+                It loops over all the properties and changes the '.' into ':'
+            -->
+            <meta name="twitter:{transformed}" content="{value}"/>
         {/each}
     {/if}
+
+    {#if openGraph}
+            <OpenGraphComponent {openGraph}/>
+    {/if}
+
 </svelte:head>

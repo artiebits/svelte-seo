@@ -41,8 +41,107 @@ const SEO = {
         appNameIpad: "Svelte SEO",
         appIdGoogleplay: "svelte.seo.com",
         appNameGoogleplay: "Svelte SEO",
-        appUrlGoogleplay: "https://play.google.com/store/apps/details?id=com.sega.sonicdash"
+        appUrlGoogleplay: "https://play.google.com/store/apps/details?id=com.sega.sonicdash",
+    },
 
+    /**@type {SvelteSeo['facebook']} */
+    facebook: {
+        appId: "12344567"
+    },
+
+    /**@type {SvelteSeo['openGraph']} */
+    openGraph: {
+        title: "Open Graph Article Title",
+        type: "website",
+        url: "https://www.example.com",
+        audio: "http://www.example.com.audio",
+        audioSecure_url: "https://www.example.com.audio",
+        audioType: "audio/mpeg",
+        description: "Description of open graph article",
+        determiner: "the",
+        locale: "en_US",
+        localeAlternate: ["fr_FR","es_ES"],
+        site_name: "Svelte SEO",
+        videos: [
+            {
+                url: "http://www.example.video",
+                secure_url: "https://www.example.video",
+                type: "application/x-shockwave-flash",
+                alt: "Video Alt",
+                width: 600,
+                height: 600
+            }
+        ],
+        images: [
+            {
+                url: "http://www.example.image",
+                secure_url: "https://www.example.image",
+                type: "image/jpeg",
+                alt: "image alt",
+                width: 400,
+                height: 400
+
+            },
+            {
+                url: "http://www.example1.image",
+                secure_url: "https://www.example1.image",
+                type: "image/jpeg",
+                alt: "image alt",
+                width: 500,
+                height: 500
+
+            }
+        ],
+
+        music: {
+            duration: 236,
+            album: "http://open.spotify.com/album/7rq68qYz66mNdPfidhIEFa",
+            albumDisc: 1,
+            albumTrack: 3,
+            musician: "https://your-profile.com",
+            creator: "https://creator-profile.com",
+            song: "http://open.spotify.com/track/0pfHfdUNVwlXA0WDXznm2C",
+            songDisc: "1",
+            songTrack: "3",
+            release_date: "2011-04-19"
+        },
+
+        movie: {
+            actor: ["https://url-to-actor.com"],
+            actorRole: "Cameo",
+            director: ["https://www.director.com"],
+            writer: ["https://www.writer.com"],
+            duration: "300",
+            release_date: "2011-04-19",
+            tag: ["action","train"],
+            series: "https://www.series.com"
+        },
+
+        article: {
+            published_time: "2020-08-03T17:31:37Z",
+            modified_time: "2020-08-20T09:31:37Z",
+            expiration_time: "2025-12-21T17:31:37Z",
+            section: "Section II",
+            author: [
+              "https://www.example.com/authors/@firstnameA-lastnameA",
+              "https://www.example.com/authors/@firstnameB-lastnameB",
+            ],
+            tag: ["Tag A", "Tag B", "Tag C"],
+          },
+
+          book: {
+            author: ["https://ww.author.com"],
+            isbn: 1234567,
+            release_date: "2022-12-12",
+            tag: ["romance","love"]
+          },
+
+          profile: {
+            first_name: "John",
+            last_name: "Doe",
+            username: "johndoe",
+            gender: "male"
+          }
     }
 }
 
