@@ -26,7 +26,6 @@ or `pnpm`
 
 `pnpm install -D svelte-seo`
 
-
 ## Usage
 
 ### Add SEO to Page
@@ -35,30 +34,27 @@ Import SvelteSEO and add the desired properties. This will render out the tags i
 
 ```svelte
 <script>
-  import SvelteSeo from "svelte-seo";
+	import SvelteSeo from 'svelte-seo';
 </script>
 
-<SvelteSeo
-  title="Simple Usage Example"
-  description="A short description goes here."
-/>
+<SvelteSeo title="Simple Usage Example" description="A short description goes here." />
 ```
 
 ### Svelte SEO options
 
-| Property | Type | Default | Description |
------------| ---------| -----------| ---------|
-| title | string | undefined | defines the title of the document |
-| description | string | undefined | Define a description of your web page |
-| keywords | string | undefined | Set the page keywords  |
-| base | string | undefined | specifies the base URL to use for all relative URLs in a document |
-| applicationName | string | undefined | Name of web application (only should be used if the website is used as an app) |
-| themeColor | string | undefined | Theme color for your website |
-| noindex | Boolean | false | Sets whether page should be indexed or not. [More Info](#no-index) |
-| nofollow | Boolean | false | Sets whether page should be followed or not. [More Info](#no-follow) |
-| nositelinkssearchbox | Boolean | false | Tells Google not to show the sitelinks search box |
-| notranslate | Boolean | false | Tells Google not to provide a translation for this document | 
-| canonical | string | undefined | Helps prevent duplicate content issues |
-| amp | string | undefined | Links to an AMP HTML version of the current document |
-| manifest | string | undefined | Links to a JSON file that specifies "installation" credentials for the web applications |
-| languageAlternates | Array<{ hreflang: string, href: string }> | undefined | Gives a reference to a location in your document that may be in another language |
+| Property             | Type                                      | Default   | Description                                                                             |
+| -------------------- | ----------------------------------------- | --------- | --------------------------------------------------------------------------------------- |
+| title                | string                                    | undefined | defines the title of the document                                                       |
+| description          | string                                    | undefined | Define a description of your web page                                                   |
+| keywords             | string                                    | undefined | Set the page keywords                                                                   |
+| base                 | string                                    | undefined | specifies the base URL to use for all relative URLs in a document                       |
+| applicationName      | string                                    | undefined | Name of web application (only should be used if the website is used as an app)          |
+| themeColor           | string                                    | undefined | Theme color for your website                                                            |
+| noindex              | Boolean                                   | false     | Sets whether page should be indexed or not. [More Info](#no-index)                      |
+| nofollow             | Boolean                                   | false     | Sets whether page should be followed or not. [More Info](#no-follow)                    |
+| nositelinkssearchbox | Boolean                                   | false     | Tells Google not to show the sitelinks search box                                       |
+| notranslate          | Boolean                                   | false     | Tells Google not to provide a translation for this document                             |
+| canonical            | string                                    | undefined | Helps prevent duplicate content issues                                                  |
+| amp                  | string                                    | undefined | Links to an AMP HTML version of the current document                                    |
+| manifest             | string                                    | undefined | Links to a JSON file that specifies "installation" credentials for the web applications |
+| languageAlternates   | Array<{ hreflang: string, href: string }> | undefined | Gives a reference to a location in your document that may be in another language        |
