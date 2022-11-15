@@ -21,13 +21,13 @@ const SEO = {
 		}
 	],
 
-	
+	/**@type {SvelteSeo['twitter']} */
 	twitter: {
 		title: 'Open Graph Article Title',
 		description: 'Description of open graph article',
 		image: 'https://image.com',
 		imageAlt: 'image Alt',
-		card: 'app',
+		card: "app",
 		site: '@svelteseo',
 		creator: '@artiebits',
 		player: 'https://wakey.io/embed/26',

@@ -27,7 +27,7 @@ declare interface Twitter {
 	description?: string;
 	image?: string;
 	imageAlt?: string;
-	card?: 'summary' | 'summary_large_image' | 'player' | 'app';
+	card?: "summary" | "summary_large_image" | "player" | "app";
 	site?: string;
 	creator?: string;
 	player?: string;
@@ -123,5 +123,5 @@ declare interface openGraphProfile {
 	first_name?: string;
 	last_name?: string;
 	username?: string;
-	gender?: 'male' | 'female';
+	gender?: "male" | "female";
 }
