@@ -1,7 +1,7 @@
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
 	use: {
-		baseURL: "http://localhost:4173",
+		baseURL: 'http://localhost:4173'
 	},
 	webServer: {
 		command: 'pnpm preview',

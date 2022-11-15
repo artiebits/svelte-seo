@@ -11,7 +11,7 @@
 		{@const _type = typeof value}
 		{#if _type !== 'object'}
 			{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
-			<meta property="og:{transform}" content="{value}" />
+			<meta property="og:{transform}" content={value} />
 		{/if}
 		{#if _type === 'object'}
 			{#if key === 'images'}
@@ -30,14 +30,14 @@
 						{/if}
 					{/each}
 				{/each}
-			{:else if key === "localeAlternate"}
+			{:else if key === 'localeAlternate'}
 				{#each openGraph.localeAlternate ?? [] as alternate}
-					<meta property="og:locale:alternate" content="{alternate}"/>
+					<meta property="og:locale:alternate" content={alternate} />
 				{/each}
-			{:else if key === "music"}
+			{:else if key === 'music'}
 				{#each Object.entries(openGraph.music ?? {}) as [key, value]}
-				{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
-					<meta property="music:{transform}" content="{value.toString()}" />
+					{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
+					<meta property="music:{transform}" content={value.toString()} />
 				{/each}
 			{/if}
 		{/if}
