@@ -77,6 +77,10 @@
 	{#if manifest}
 		<link rel="manifest" href={manifest} />
 	{/if}
+	
+	{#if applicationName}
+		<meta name="application-name" content="{applicationName}" />
+	{/if}
 
 	{#if languageAlternates}
 		{#each languageAlternates as { href, hreflang }}
@@ -84,12 +88,10 @@
 		{/each}
 	{/if}
 
-	{#if applicationName}
-		<meta name="application-name" content={applicationName} />
-	{/if}
+	
 
 	{#if themeColor}
-		<meta name="theme-color" content={themeColor} />
+		<meta name="theme-color" content="{themeColor}" />
 	{/if}
 
 	{#if base}

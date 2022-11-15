@@ -1,13 +1,13 @@
 const SEO = {
 	title: 'Open Graph Article Title',
 	description: 'Description of open graph article',
-	keywords: ['svelte', 'sveltekit', 'web'],
 	base: 'https://www.example.com',
+	keywords: ['svelte', 'sveltekit', 'web'],
+	applicationName: "Svelte SEO",
 	canonical: 'https://www.example.com',
-	applicationName: 'Svelte SEO',
 	themeColor: 'red',
 	nositelinkssearchbox: true,
-	notranslate: false,
+	notranslate: true,
 	amp: 'https://www.example.com/url/to/amp/document.html',
 	manifest: '/manifest.json',
 	languageAlternates: [
@@ -21,7 +21,7 @@ const SEO = {
 		}
 	],
 
-	/**@type {SvelteSeo['twitter']} */
+	
 	twitter: {
 		title: 'Open Graph Article Title',
 		description: 'Description of open graph article',
@@ -30,7 +30,6 @@ const SEO = {
 		card: 'app',
 		site: '@svelteseo',
 		creator: '@artiebits',
-		url: 'https://example.com',
 		player: 'https://wakey.io/embed/26',
 		playerWidth: '720',
 		playerHeight: '720',

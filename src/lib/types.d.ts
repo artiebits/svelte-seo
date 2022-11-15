@@ -30,7 +30,6 @@ declare interface Twitter {
 	card?: 'summary' | 'summary_large_image' | 'player' | 'app';
 	site?: string;
 	creator?: string;
-	url?: string;
 	player?: string;
 	playerWidth?: string;
 	playerHeight?: string;

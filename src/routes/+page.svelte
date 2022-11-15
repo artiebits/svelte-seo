@@ -8,8 +8,8 @@
 	description={SEO.description}
 	keywords={SEO.keywords.toString()}
 	base={SEO.base}
-	applicationName="{SEO.applicationName},"
-	themeColor="{SEO.themeColor},"
+	applicationName="{SEO.applicationName}"
+	themeColor="{SEO.themeColor}"
 	nositelinkssearchbox={SEO.nositelinkssearchbox}
 	notranslate={SEO.notranslate}
 	canonical={SEO.canonical}
