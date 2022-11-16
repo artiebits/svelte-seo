@@ -21,7 +21,7 @@ specifiers:
 devDependencies:
   '@playwright/test': 1.27.1
   '@sveltejs/adapter-auto': 1.0.0-next.88
-  '@sveltejs/kit': 1.0.0-next.549_svelte@3.53.1+vite@3.2.4
+  '@sveltejs/kit': 1.0.0-next.551_svelte@3.53.1+vite@3.2.4
   '@sveltejs/package': 1.0.0-next.1_7dvewpees4iyn2tkw2qzal77a4
   eslint: 8.27.0
   eslint-config-prettier: 8.5.0_eslint@8.27.0
@@ -149,8 +149,8 @@ packages:
       import-meta-resolve: 2.1.0
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.549_svelte@3.53.1+vite@3.2.4:
-    resolution: {integrity: sha512-seF93Epted0W49YF/AIfBCQdlrjRupVMlHSg7rV1T9nmwzFCyTQVUMmQ9zvPoY8dMIbixf6Eq6AseV43c+tHsA==}
+  /@sveltejs/kit/1.0.0-next.551_svelte@3.53.1+vite@3.2.4:
+    resolution: {integrity: sha512-pZXPoKHFcEXCEN64bw87Xv3cZO7sGztPKYXyLuzceie4qNzAQOMejxewm1xSYcaublleYXLdBWcrWwGlaSWnyw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
