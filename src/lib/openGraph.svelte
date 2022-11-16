@@ -39,6 +39,44 @@
 					{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
 					<meta property="music:{transform}" content={value.toString()} />
 				{/each}
+			{:else if key === 'movie'}
+				{#each Object.entries(openGraph.movie ?? {}) as [key, value]}
+					{#if typeof value === 'object'}
+						{#each value as propValue}
+							<meta property="video:{key}" content={propValue} />
+						{/each}
+					{:else}
+					{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
+					<meta property="video:{transform}" content={value.toString()} />
+					{/if}
+				{/each}
+			{:else if key === 'article'}
+				{#each Object.entries(openGraph.article ?? {}) as [key, value]}
+					{#if typeof value === 'object'}
+						{#each value as propValue}
+							<meta property="article:{key}" content={propValue} />
+						{/each}
+					{:else}
+						{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
+						<meta property="article:{transform}" content={value.toString()} />
+					{/if}
+				{/each}
+			{:else if key === 'book'}
+				{#each Object.entries(openGraph.book ?? {}) as [key, value]}
+					{#if typeof value === 'object'}
+						{#each value as propValue}
+							<meta property="book:{key}" content="{propValue}" />
+						{/each}
+					{:else}
+						{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
+						<meta property="book:{transform}" content={value.toString()} />
+					{/if}
+				{/each}
+			{:else if key === "profile"}
+				{#each Object.entries(openGraph.profile ?? {}) as [key, value]}
+					{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
+					<meta property="profile:{key}" content="{value}"/>
+				{/each}
 			{/if}
 		{/if}
 	{/each}

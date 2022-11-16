@@ -1,5 +1,7 @@
 const SEO = {
 	title: 'Open Graph Article Title',
+	noindex: false,
+	nofollow: false,
 	description: 'Description of open graph article',
 	base: 'https://www.example.com',
 	keywords: ['svelte', 'sveltekit', 'web'],
@@ -43,7 +45,6 @@ const SEO = {
 		appUrlGoogleplay: 'https://play.google.com/store/apps/details?id=com.sega.sonicdash'
 	},
 
-	/**@type {SvelteSeo['facebook']} */
 	facebook: {
 		appId: '12344567'
 	},
@@ -69,6 +70,22 @@ const SEO = {
 				alt: 'Video Alt',
 				width: 600,
 				height: 600
+			},
+			{
+				url: 'http://www.example1.video',
+				secure_url: 'https://www.example1.video',
+				type: 'application/x-shockwave-flash',
+				alt: 'Video Alt',
+				width: 500,
+				height: 500
+			},
+			{
+				url: 'http://www.example2.video',
+				secure_url: 'https://www.example2.video',
+				type: 'application/x-shockwave-flash',
+				alt: 'Video Alt',
+				width: 300,
+				height: 300
 			}
 		],
 		images: [
@@ -104,10 +121,14 @@ const SEO = {
 		},
 
 		movie: {
-			actor: ['https://url-to-actor.com'],
+			actor: ['https://url-to-actor.com', 'https://url-to-actor1.com', 'https://url-to-actor2.com'],
 			actorRole: 'Cameo',
-			director: ['https://www.director.com'],
-			writer: ['https://www.writer.com'],
+			director: [
+				'https://www.director.com',
+				'https://www.director1.com',
+				'https://www.director2.com'
+			],
+			writer: ['https://www.writer.com', 'https://www.writer2.com', 'https://www.writer3.com'],
 			duration: '300',
 			release_date: '2011-04-19',
 			tag: ['action', 'train'],
@@ -127,8 +148,8 @@ const SEO = {
 		},
 
 		book: {
-			author: ['https://ww.author.com'],
-			isbn: 1234567,
+			author: ['https://ww.author.com', 'https://ww.author1.com', 'https://ww.author2.com'],
+			isbn: 1234567910,
 			release_date: '2022-12-12',
 			tag: ['romance', 'love']
 		},

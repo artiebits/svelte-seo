@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import data from '../routes/index.js';
 
-test.describe.configure({ mode: 'parallel' });
+
 
 test.describe('Testing OpenGraph meta tags', async () => {
 	test.beforeEach(async ({ page }) => {
@@ -203,4 +203,154 @@ test.describe('Testing OpenGraph meta tags', async () => {
 		expect(element, 'The tag must exist').toBeDefined();
 		expect(await element.getAttribute('content')).toBe(data.openGraph?.music?.creator);
 	});
+
+	test('Loads video:actor tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='video:actor']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.count(), 'Loads the right amount of tags').toBe(
+			data.openGraph?.movie?.actor?.length
+		);
+	});
+
+	test('Loads video:actor:role tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='video:actor:role']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.movie?.actorRole);
+	});
+
+	test('Loads video:director tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='video:director']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.count(), 'Loads the right amount of tags').toBe(
+			data.openGraph?.movie?.director?.length
+		);
+	});
+
+	test('Loads video:writer tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='video:writer']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.count(), 'Loads the right amount of tags').toBe(
+			data.openGraph?.movie?.writer?.length
+		);
+	});
+
+	test('Loads video:duration tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='video:duration']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.movie?.duration);
+	});
+
+	test('Loads video:release_date tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='video:release_date']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.movie?.release_date);
+	});
+
+	test('Loads video:tag tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='video:tag']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.count(), 'Loads the right amount of tags').toBe(
+			data.openGraph?.movie?.tag?.length
+		);
+	});
+
+	test('Loads video:series tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='video:series']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.movie?.series);
+	});
+
+	test('Loads article:published_time tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='article:published_time']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.article?.published_time);
+	});
+
+	test('Loads article:modified_time tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='article:modified_time']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.article?.modified_time);
+	});
+
+	test('Loads article:expiration_time tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='article:expiration_time']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.article?.expiration_time);
+	});
+
+	test('Loads article:author tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='article:author']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.count(), 'Loads the right amount of tags').toBe(
+			data.openGraph?.article?.author?.length
+		);
+	});
+
+	test('Loads article:section tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='article:section']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.article?.section);
+	});
+
+	test('Loads article:tag tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='article:tag']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.count(), 'Loads the right amount of tags').toBe(
+			data.openGraph?.article?.tag?.length
+		);
+	});
+
+	test('Loads book:author tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='book:author']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.count(), 'Loads the right amount of tags').toBe(
+			data.openGraph?.book?.author?.length
+		);
+	});
+
+	test('Loads book:isbn tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='book:isbn']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.book?.isbn?.toString());
+	});
+
+	test('Loads book:release_date tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='book:release_date']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.book?.release_date?.toString());
+	});
+
+	test('Loads book:tag tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='book:tag']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.count(), 'Loads the right amount of tags').toBe(
+			data.openGraph?.book?.tag?.length
+		);
+	});
+
+
+	test('Loads profile:first_name tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='profile:first_name']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.profile?.first_name);
+	});
+
+	test('Loads profile:last_name tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='profile:last_name']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.profile?.last_name);
+	});
+
+	test('Loads profile:username tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='profile:username']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.profile?.username);
+	});
+
+	test('Loads profile:gender tag correctly', async ({ page }) => {
+		const element = page.locator("meta[property='profile:gender']");
+		expect(element, 'The tag must exist').toBeDefined();
+		expect(await element.getAttribute('content')).toBe(data.openGraph?.profile?.gender);
+	});
+
 });

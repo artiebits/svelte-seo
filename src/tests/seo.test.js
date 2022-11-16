@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import data from '../routes/index.js';
 
-test.describe.configure({ mode: 'parallel' });
 
 test.describe('Testing SEO and meta tags', () => {
 	test.beforeEach(async ({ page }) => {
@@ -9,7 +8,7 @@ test.describe('Testing SEO and meta tags', () => {
 	});
 
 	test('Loads the title', async ({ page }) => {
-		await expect(page).toHaveTitle(data.title);
+		await expect(page).toHaveTitle(data?.title);
 	});
 
 	test("Loads description tag meta[name='description']", async ({ page }) => {
@@ -27,7 +26,7 @@ test.describe('Testing SEO and meta tags', () => {
 		const keywords = await element.getAttribute('content');
 		expect(keywords, 'Must render keywords tag').toBe(data.keywords.toString());
 		expect(keywords?.split(',').length, 'Loads the right number of keywords').toBe(
-			data.keywords.length
+			data.keywords?.length
 		);
 	});
 

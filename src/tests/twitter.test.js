@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
 import data from '../routes/index.js';
 
-test.describe.configure({ mode: 'parallel' });
-
 test.describe('Loads twitter tags', () => {
 	test.beforeEach(async ({ page }) => {
 		await page.goto('/');
