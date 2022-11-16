@@ -1,5 +1,5 @@
 <script>
-	/**@type {SvelteSeo['openGraph']}*/
+	/**@type {import("./types").SvelteSeo['openGraph']}*/
 	export let openGraph = undefined;
 </script>
 
@@ -46,8 +46,8 @@
 							<meta property="video:{key}" content={propValue} />
 						{/each}
 					{:else}
-					{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
-					<meta property="video:{transform}" content={value.toString()} />
+						{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
+						<meta property="video:{transform}" content={value.toString()} />
 					{/if}
 				{/each}
 			{:else if key === 'article'}
@@ -65,17 +65,17 @@
 				{#each Object.entries(openGraph.book ?? {}) as [key, value]}
 					{#if typeof value === 'object'}
 						{#each value as propValue}
-							<meta property="book:{key}" content="{propValue}" />
+							<meta property="book:{key}" content={propValue} />
 						{/each}
 					{:else}
 						{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
 						<meta property="book:{transform}" content={value.toString()} />
 					{/if}
 				{/each}
-			{:else if key === "profile"}
+			{:else if key === 'profile'}
 				{#each Object.entries(openGraph.profile ?? {}) as [key, value]}
 					{@const transform = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
-					<meta property="profile:{key}" content="{value}"/>
+					<meta property="profile:{transform}" content={value} />
 				{/each}
 			{/if}
 		{/if}

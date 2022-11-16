@@ -1,4 +1,4 @@
-declare interface SvelteSeo {
+export interface SvelteSeo {
 	title?: string;
 	description?: string;
 	base?: string;

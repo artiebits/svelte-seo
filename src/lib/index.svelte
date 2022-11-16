@@ -1,53 +1,53 @@
 <script>
-	/** @type {SvelteSeo["title"]}*/
+	/** @type {import("./types").SvelteSeo['title']}*/
 	export let title = undefined;
 
-	/** @type {SvelteSeo["description"]}*/
+	/** @type {import("./types").SvelteSeo["description"]}*/
 	export let description = undefined;
 
-	/**@type {SvelteSeo["keywords"]}*/
+	/**@type {import("./types").SvelteSeo["keywords"]}*/
 	export let keywords = undefined;
 
-	/** @type {SvelteSeo["base"]}*/
+	/** @type {import("./types").SvelteSeo["base"]}*/
 	export let base = undefined;
 
-	/**@type {SvelteSeo["applicationName"]}*/
+	/**@type {import("./types").SvelteSeo["applicationName"]}*/
 	export let applicationName = undefined;
 
-	/**@type {SvelteSeo["themeColor"]}*/
+	/**@type {import("./types").SvelteSeo["themeColor"]}*/
 	export let themeColor = undefined;
 
-	/**@type {SvelteSeo["nofollow"]}*/
+	/**@type {import("./types").SvelteSeo["nofollow"]}*/
 	export let nofollow = false;
 
-	/**@type {SvelteSeo["noindex"]}*/
+	/**@type {import("./types").SvelteSeo["noindex"]}*/
 	export let noindex = false;
 
-	/**@type {SvelteSeo["nositelinkssearchbox"]}*/
+	/**@type {import("./types").SvelteSeo["nositelinkssearchbox"]}*/
 	export let nositelinkssearchbox = false;
 
-	/** @type {SvelteSeo["notranslate"]}*/
+	/** @type {import("./types").SvelteSeo["notranslate"]}*/
 	export let notranslate = false;
 
-	/** @type {SvelteSeo["canonical"]}*/
+	/** @type {import("./types").SvelteSeo["canonical"]}*/
 	export let canonical = undefined;
 
-	/** @type {SvelteSeo["amp"]}*/
+	/** @type {import("./types").SvelteSeo["amp"]}*/
 	export let amp = undefined;
 
-	/** @type {SvelteSeo["manifest"]}*/
+	/** @type {import("./types").SvelteSeo["manifest"]}*/
 	export let manifest = undefined;
 
-	/**@type {SvelteSeo["languageAlternates"]}*/
+	/**@type {import("./types").SvelteSeo["languageAlternates"]}*/
 	export let languageAlternates = undefined;
 
-	/**@type {SvelteSeo['twitter']}*/
+	/**@type {import("./types").SvelteSeo['twitter']}*/
 	export let twitter = undefined;
 
-	/**@type {SvelteSeo['openGraph']}*/
+	/**@type {import('./types').SvelteSeo['openGraph']}*/
 	export let openGraph = undefined;
 
-	/**@type {SvelteSeo['facebook']}*/
+	/**@type {import("./types").SvelteSeo['facebook']}*/
 	export let facebook = undefined;
 
 	import OpenGraphComponent from './openGraph.svelte';

@@ -40,7 +40,7 @@
 		"ssr"
 	],
 	"lint-staged": {
-		"*.{js,svelte}": "eslint --cache --fix",
-		"*.{js,css,md,svelte}": "prettier --write"
+		"*.svelte": "eslint --cache --fix",
+		"*.{css,md,svelte}": "prettier --write"
 	}
 }
