@@ -34,10 +34,13 @@ Import SvelteSEO and add the desired properties. This will render out the tags i
 
 ```svelte
 <script>
-	import SvelteSeo from 'svelte-seo';
+  import SvelteSeo from "svelte-seo";
 </script>
 
-<SvelteSeo title="Simple Usage Example" description="A short description goes here." />
+<SvelteSeo
+  title="Simple Usage Example"
+  description="A short description goes here."
+/>
 ```
 
 ### Svelte SEO options

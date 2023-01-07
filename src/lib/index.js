@@ -1,2 +1,2 @@
-import component from './index.svelte';
+import component from "./index.svelte";
 export default component;
