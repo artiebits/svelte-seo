@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/artiebits/svelte-seo.svg?branch=master)](https://travis-ci.org/artiebits/svelte-seo)
 
-Writing SEO can be confusing and overwhelming. Svelte SEO does it easily for you and makes it effortless to ensure your content is optimized for search engine rankings.
+Writing SEO can be confusing and overwhelming. Svelte SEO does it easily for you and makes it effortless to ensure your content is optimised for search engine rankings.
 
-Quickly add meta tags, Structured Data Markup, and Open Graph tags to your web page so your content is viewable and searchable by search engines.
+Quickly add meta tags, structured data markup, and open graph tags to your web page so your content is viewable and searchable by search engines.
 
 **Sponsor Svelte SEO**
 
@@ -33,7 +33,7 @@ There are many ways in which you can use this component.
 
 * Basic usage
 
-  The basic meta tags required for every page is a "title" and "description". This is how you can implement it in Svelte SEO.
+  The basic meta tags required for every page are "title" and "description." This is how you can implement it in Svelte SEO.
 
   
 
@@ -72,9 +72,9 @@ There are many ways in which you can use this component.
 
 ### Setting default SEO properties
 
-There are some properties which will stayed fixed for every page on your website; examples are the `them-color`, `manifest` and `<base/>` tag or you might want to set a default title for every page. Svelte SEO makes it easy to set defaults for these properties or for any properties which you want to have defaults for.
+There are some properties that will stay fixed for every page on your website; examples are the `theme-color`, `manifest`, and `<base/>` tags, or you might want to set a default title for every page. Svelte SEO makes it easy to set defaults for these properties or for any properties that you want to have defaults for.
 
-The secret to doing is this by using layouts. Configuring the component in your layout will ensure that those properties will remain fixed for every page but can be overridden in per page basis.
+The secret to doing this is using layouts. Configuring the component in your layout will ensure that those properties will remain fixed for every page but can be overridden on a per page basis.
 
 Let's say we have this tree structure with the following code below.
 
@@ -121,15 +121,15 @@ src/
 <!--------------------->
 ```
 
-In the project structure above, `src/routes/+page.svelte` will not inherit the default `title` and `themeColor` because we override the defaults but `src/routes/other/+page.svelte`  will inherit those properties since we did not override it inside the page.
+In the project structure above, `src/routes/+page.svelte` will not inherit the default `title` and `themeColor` because we override them but `src/routes/other/+page.svelte`  will inherit those properties since we did not override them inside the page.
 
 
 
 ### Configuring the component inside your layout
 
-There are instances where you might not want to import the component for every page yet still set the SEO properties. We can accomplish this with the use of layout and page data. 
+There are instances where you might not want to import the component for every page but still set the SEO properties. We can accomplish this with the use of layout and page data. 
 
-Using this method, we will return an object inside our load function which contains SEO properties.
+Using this method, we will return an object inside our load function that contains SEO properties.
 
 ```javascript
 // src/routes/+page.js
