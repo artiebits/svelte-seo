@@ -18,11 +18,11 @@ If you rely on Svelte SEO, please consider supporting it.
 
 This module must be installed as a `devDependency`
 
-* npm
+* npm  
 `npm install -D svelte-seo`
-* yarn
+* yarn  
 `yarn add -D svelte-seo`
-* pnpm
+* pnpm  
   `pnpm add -D svelte-seo`
 
 
