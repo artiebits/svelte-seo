@@ -50,6 +50,9 @@
   /**@type {import("./types").SvelteSeo['facebook']}*/
   export let facebook = undefined;
 
+  /**@type {import("./types").SvelteSeo['jsonLd']}*/
+  export let jsonLd = undefined;
+
   import OpenGraphComponent from "./openGraph.svelte";
 </script>
 
@@ -136,5 +139,11 @@
   {#if openGraph}
     <OpenGraphComponent {openGraph} />
   {/if}
+
+  {#if jsonLd}
+    {@const data = Object.assign({}, jsonLd)}
+     {@html `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", data }) + "<"}/script>`}
+  {/if}
+
   <slot />
 </svelte:head>

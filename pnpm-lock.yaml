@@ -12,6 +12,7 @@ specifiers:
   lint-staged: ^13.1.0
   prettier: ^2.8.2
   prettier-plugin-svelte: ^2.9.0
+  schema-dts: ^1.1.0
   svelte: ^3.55.0
   svelte-check: ^3.0.1
   tslib: ^2.4.1
@@ -30,6 +31,7 @@ devDependencies:
   lint-staged: 13.1.0
   prettier: 2.8.2
   prettier-plugin-svelte: 2.9.0_74vfyr7qjo56zgjcvkwi6gyjxm
+  schema-dts: 1.1.0_typescript@4.9.4
   svelte: 3.55.0
   svelte-check: 3.0.1_svelte@3.55.0
   tslib: 2.4.1
@@ -1561,6 +1563,14 @@ packages:
       graceful-fs: 4.2.10
       mkdirp: 0.5.6
       rimraf: 2.7.1
+    dev: true
+
+  /schema-dts/1.1.0_typescript@4.9.4:
+    resolution: {integrity: sha512-vdmbs/5ycj4zyKpZIDqTcy+IZi4s7c38RVAYuDmRi7zgxUT8wRWPMLzg0jr7FjdVunYu9yZ00F3+XcZTTFcTOQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    dependencies:
+      typescript: 4.9.4
     dev: true
 
   /set-cookie-parser/2.5.1:

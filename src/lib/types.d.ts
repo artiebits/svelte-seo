@@ -1,3 +1,5 @@
+import { Thing, WithContext } from "schema-dts";
+
 export interface SvelteSeo {
   title?: string;
   description?: string;
@@ -16,6 +18,7 @@ export interface SvelteSeo {
   twitter?: Twitter;
   facebook?: Facebook;
   openGraph?: OpenGraph;
+  jsonLd?: Thing | WithContext<Thing>
 }
 
 declare interface Facebook {
