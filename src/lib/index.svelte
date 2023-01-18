@@ -136,5 +136,5 @@
   {#if openGraph}
     <OpenGraphComponent {openGraph} />
   {/if}
-  <slot/>
+  <slot />
 </svelte:head>
