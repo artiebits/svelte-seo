@@ -23,7 +23,7 @@ const SEO = {
     },
   ],
 
-  /**@type {SvelteSeo['twitter']} */
+  /**@type {import("../lib/types").SvelteSeo['twitter']}*/
   twitter: {
     title: "Open Graph Article Title",
     description: "Description of open graph article",
@@ -50,7 +50,7 @@ const SEO = {
     appId: "12344567",
   },
 
-  /**@type {SvelteSeo['openGraph']} */
+  /**@type {import("../lib/types").OpenGraph} */
   openGraph: {
     title: "Open Graph Article Title",
     type: "website",
