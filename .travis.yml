@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - 18
+  - 16
 
 cache:
   # cache both npm modules 
