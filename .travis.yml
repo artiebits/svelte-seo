@@ -10,9 +10,9 @@ cache:
     - ~/.cache
 
 script:
-  -  npm run format
-  -  npm run lint
-  -  npm run check
+  - npm run format
+  - npm run lint
+  - npm run check
   - npm run test
   - npx playwright install
   - npm run build
