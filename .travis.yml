@@ -4,15 +4,15 @@ node_js:
   - 17
 
 cache:
-  # cache both npm modules and Cypress binary
+  # cache both npm modules 
   directories:
     - ~/.npm
     - ~/.cache
-  # install dependencies and check that Cypress can run
-  override:
-    - npm ci
-    - npm run cy:verify
 
 script:
+  -  npm run format
+  -  npm run lint
+  -  npm run check
   - npm run test
+  - npx playwright install
   - npm run build

@@ -6,7 +6,7 @@ const config = {
   fullyParallel: true,
   webServer: {
     reuseExistingServer: true,
-    command: "pnpm preview",
+    command: "yarn run preview",
     port: 4173,
   },
 };
