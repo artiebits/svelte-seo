@@ -202,10 +202,11 @@ export const load = async()=>{
 | openGraph.article         | `{published_time?: string; modified_time?: string; expiration_time?: string; author?: string[]; section?: string; tag?: string[];}`                                                                                              | undefined | OpenGraph for an article                                                                                                                                                                         |
 | openGraph.book            | `{ author?: string[]; isbn?: string \| number; release_date?: string; tag?: string[] }`                                                                                                                                          | undefined | OpenGraph for a book                                                                                                                                                                             |
 | openGraph.profile         | `{ first_name?: string;last_name?: string; username?: string; gender?: "male" \| "female";}`                                                                                                                                     | undefined | OpenGraph for a profile                                                                                                                                                                          |
--## Acknowledgements
--
--This is inspired by [Next SEO](https://github.com/garmeeh/next-seo) by [@garmeeh](https://github.com/garmeeh).
--
--## License
--
+
+## -## Acknowledgements
+
+## -This is inspired by [Next SEO](https://github.com/garmeeh/next-seo) by [@garmeeh](https://github.com/garmeeh).
+
+## -## License
+
 -MIT
