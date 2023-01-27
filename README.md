@@ -33,11 +33,11 @@ There are many ways in which you can use this component.
 
   ```svelte
   <script>
-    import Head from "svelte-seo";
-    // You can choose to use any name apart from 'Head'
+    import SvelteSeo from "svelte-seo";
+    // You can choose to use any name apart from 'SvelteSeo'
   </script>
 
-  <Head
+  <SvelteSeo
     title="Simple page title"
     description="Simple description about a page"
   />
@@ -49,15 +49,15 @@ There are many ways in which you can use this component.
 
   ```svelte
   <script>
-    import Head from "svelte-seo";
+    import SvelteSeo from "svelte-seo";
   </script>
-
-  <Head>
+  
+  <SvelteSeo>
     <link rel="stylesheet" href="/tutorial/dark-theme.css" />
     <script>
       // your javascript can go here
     </script>
-  </Head>
+  </SvelteSeo>
   ```
 
 ### Setting default SEO properties
@@ -81,10 +81,10 @@ src/
 ```svelte
 <!-- src/routes/+layout.svelte -->
 <script>
-    import Head from "svelte-seo";
+    import SvelteSeo from "svelte-seo";
 </script>
 
-<Head
+<SvelteSeo
     title = "Default Title"
     themeColor = "red"
     notranslate = {true}
@@ -95,10 +95,10 @@ src/
 
 <!-- src/routes/+page.svelte -->
 <script>
-	import Head from "svelte-seo";
+	import SvelteSeo from "svelte-seo";
 </script>
 
-<Head
+<SvelteSeo
   title = "Home page"
   themeColor = "blue"
 />
@@ -134,11 +134,11 @@ export const load = async()=>{
 ```svelte
 <!-- src/routes/+layout.svelte -->
 <script>
-  import Head from "svelte-seo";
+  import SvelteSeo from "svelte-seo";
   import { page } from "$app/stores";
 </script>
 
-<Head
+<SvelteSeo
   title={$page.data.SEO.title}
   description={$page.data.SEO.description}
   themeColor={$page.data.SEO.themeColor}
@@ -203,10 +203,10 @@ export const load = async()=>{
 | openGraph.book            | `{ author?: string[]; isbn?: string \| number; release_date?: string; tag?: string[] }`                                                                                                                                          | undefined | OpenGraph for a book                                                                                                                                                                             |
 | openGraph.profile         | `{ first_name?: string;last_name?: string; username?: string; gender?: "male" \| "female";}`                                                                                                                                     | undefined | OpenGraph for a profile                                                                                                                                                                          |
 
-## -## Acknowledgements
+## Acknowledgements
 
-## -This is inspired by [Next SEO](https://github.com/garmeeh/next-seo) by [@garmeeh](https://github.com/garmeeh).
+This is inspired by [Next SEO](https://github.com/garmeeh/next-seo) by [@garmeeh](https://github.com/garmeeh).
 
-## -## License
+## License
 
--MIT
+MIT
