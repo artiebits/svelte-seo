@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "svelte-kit sync && svelte-package",
-    "prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
+    "prepublishOnly": "yarn build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
     "test": "playwright test",
