@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Svelte SEO](#svelte-seo)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Setting default SEO properties](#setting-default-seo-properties)
+    - [Configuring the component inside your layout](#configuring-the-component-inside-your-layout)
+  - [Component Properties](#component-properties)
+  - [Acknowledgements](#acknowledgements)
+  - [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Svelte SEO
 
 [![Build Status](https://travis-ci.org/artiebits/svelte-seo.svg?branch=master)](https://travis-ci.org/artiebits/svelte-seo)
