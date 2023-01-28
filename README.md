@@ -1,6 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
 
 - [Svelte SEO](#svelte-seo)
   - [Installation](#installation)
@@ -66,7 +67,7 @@ There are many ways in which you can use this component.
   <script>
     import SvelteSeo from "svelte-seo";
   </script>
-  
+
   <SvelteSeo>
     <link rel="stylesheet" href="/tutorial/dark-theme.css" />
     <script>
