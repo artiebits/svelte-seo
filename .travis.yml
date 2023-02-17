@@ -1,18 +1,19 @@
 language: node_js
 
 node_js:
-  - 17
+  - 16
 
 cache:
-  # cache both npm modules and Cypress binary
+  # cache both npm modules
   directories:
     - ~/.npm
     - ~/.cache
-  # install dependencies and check that Cypress can run
-  override:
-    - npm ci
-    - npm run cy:verify
+
+before_script:
+  - npx playwright install
 
 script:
+  - npm run lint
+  - npm run check
   - npm run test
   - npm run build
