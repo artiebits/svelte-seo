@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/artiebits/svelte-seo/compare/v1.4.0...v1.5.0) (2023-02-17)
+
+
+### Features
+
+* new complete version of "Svelte SEO" ([#45](https://www.github.com/artiebits/svelte-seo/issues/45)) ([0a1f2a8](https://www.github.com/artiebits/svelte-seo/commit/0a1f2a846723e0474b9d4e763708538d50c26c89))
+
+
+### Bug Fixes
+
+* switch to node 17 ([#37](https://www.github.com/artiebits/svelte-seo/issues/37)) ([6b057e9](https://www.github.com/artiebits/svelte-seo/commit/6b057e9f31d07ae391f71c76746eade4d86bebc8))
+
 ## [1.4.0](https://www.github.com/artiebits/svelte-seo/compare/v1.3.1...v1.4.0) (2022-01-19)
 
 ### Features
