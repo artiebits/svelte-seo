@@ -1,27 +1,26 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+
+- [Svelte SEO](#svelte-seo)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Setting default SEO properties](#setting-default-seo-properties)
+    - [Configuring the component inside your layout](#configuring-the-component-inside-your-layout)
+  - [Component Properties](#component-properties)
+  - [Acknowledgements](#acknowledgements)
+  - [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Svelte SEO
 
 [![Build Status](https://travis-ci.org/artiebits/svelte-seo.svg?branch=master)](https://travis-ci.org/artiebits/svelte-seo)
 
-Svelte SEO is a plugin that makes managing your SEO easier in Svelte projects.
+Writing SEO can be confusing and overwhelming. Svelte SEO does it easily for you and makes it effortless to ensure your content is optimised for search engine rankings.
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-- [Installing](#installing)
-- [Usage](#usage)
-  - [Add SEO to Page](#add-seo-to-page)
-  - [Svelte SEO options](#svelte-seo-options)
-  - [Open Graph](#open-graph)
-    - [Basic Example](#basic-example)
-    - [Article Example](#article-example)
-  - [Twitter Link Preview Card](#twitter-link-preview-card)
-    - [Twitter Example](#twitter-example)
-  - [JSON-LD](#json-ld)
-    - [JSON-LD Example](#json-ld-example)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+Quickly add meta tags, structured data markup, and open graph tags to your web page so your content is viewable and searchable by search engines.
 
 **Sponsor Svelte SEO**
 
@@ -29,200 +28,196 @@ If you rely on Svelte SEO, please consider supporting it.
 
 <a href="https://www.buymeacoffee.com/artiebits" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-## Installing
+## Installation
 
-Install using `yarn`:
+This module must be installed as a `devDependency`
 
-`yarn add svelte-seo`
-
-or `npm`:
-
-`npm install --save svelte-seo`
+- npm  
+  `npm install -D svelte-seo`
+- yarn  
+  `yarn add -D svelte-seo`
+- pnpm  
+  `pnpm add -D svelte-seo`
 
 ## Usage
 
-### Add SEO to Page
+There are many ways in which you can use this component.
 
-Import Svelte SEO and add the desired properties. This will render out the tags in the `<head>` for SEO. At a bare minimum, you should add a title and description.
+- Basic usage
 
-```svelte
-<script>
-  import SvelteSeo from "svelte-seo";
-</script>
+  The basic meta tags required for every page are "title" and "description." This is how you can implement it in Svelte SEO.
 
-<SvelteSeo
-  title="Simple Usage Example"
-  description="A short description goes here."
-/>
+  ```svelte
+  <script>
+    import SvelteSeo from "svelte-seo";
+    // You can choose to use any name apart from 'SvelteSeo'
+  </script>
+
+  <SvelteSeo
+    title="Simple page title"
+    description="Simple description about a page"
+  />
+  ```
+
+  The statement above would insert the title tag and the description tag inside the head element.
+
+- The component also allows you to insert elements and contents inside the `<head>` of your document.
+
+  ```svelte
+  <script>
+    import SvelteSeo from "svelte-seo";
+  </script>
+
+  <SvelteSeo>
+    <link rel="stylesheet" href="/tutorial/dark-theme.css" />
+    <script>
+      // your javascript can go here
+    </script>
+  </SvelteSeo>
+  ```
+
+### Setting default SEO properties
+
+There are some properties that will stay fixed for every page on your website; examples are the `theme-color`, `manifest`, and `<base/>` tags, or you might want to set a default title for every page. Svelte SEO makes it easy to set defaults for these properties or for any properties that you want to have defaults for.
+
+The secret to doing this is using layouts. Configuring the component in your layout will ensure that those properties will remain fixed for every page but can be overridden on a per page basis.
+
+Let's say we have this tree structure with the following code below.
+
+```
+src/
+├─ routes/
+│  ├─ +layout.svelte
+│  ├─ +page.svelte
+│  ├─ other/
+│  │  ├─ +page.svelte
+
 ```
 
-### Svelte SEO options
-
-| Property                           | Type                    | Description                                                                                                                                                                                                                                                                                                                                          |
-| ---------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`                            | string                  | Sets the page meta title.                                                                                                                                                                                                                                                                                                                            |
-| `description`                      | string                  | Sets the page meta description.                                                                                                                                                                                                                                                                                                                      |
-| `noindex`                          | boolean (default false) | Sets whether page should be indexed or not. [More Info](#no-index).                                                                                                                                                                                                                                                                                  |
-| `nofollow`                         | boolean (default false) | Sets whether page should be followed or not. [More Info](#no-follow).                                                                                                                                                                                                                                                                                |
-| `keywords`                         | string                  | Set the page keywords.                                                                                                                                                                                                                                                                                                                               |
-| `canonical`                        | string                  | Set the page canonical url.                                                                                                                                                                                                                                                                                                                          |
-| `openGraph.type`                   | string                  | The type of your object. Depending on the type you specify, other properties may also be required [More Info](#open-graph).                                                                                                                                                                                                                          |
-| `openGraph.title`                  | string                  | The open graph title, this can be different than your meta title.                                                                                                                                                                                                                                                                                    |
-| `openGraph.description`            | string                  | The open graph description, this can be different than your meta description.                                                                                                                                                                                                                                                                        |
-| `openGraph.url`                    | string                  | The canonical URL of your object that will be used as its permanent ID in the graph.                                                                                                                                                                                                                                                                 |
-| `openGraph.images`                 | object[]                | An array of images to be used as a preview. If multiple supplied you can choose one when sharing. [See Examples](#open-graph-examples)                                                                                                                                                                                                               |
-| `openGraph.article.publishedTime`  | datetime                | When the article was first published. [See Examples](#open-graph-examples).                                                                                                                                                                                                                                                                          |
-| `openGraph.article.modifiedTime`   | datetime                | When the article was last changed.                                                                                                                                                                                                                                                                                                                   |
-| `openGraph.article.expirationTime` | datetime                | When the article is out of date after.                                                                                                                                                                                                                                                                                                               |
-| `openGraph.article.authors`        | string[]                | Writers of the article.                                                                                                                                                                                                                                                                                                                              |
-| `openGraph.article.section`        | string                  | A high-level section name. E.g. Technology                                                                                                                                                                                                                                                                                                           |
-| `openGraph.article.tags`           | string[]                | Tag words associated with this article.                                                                                                                                                                                                                                                                                                              |
-| `twitter.card`                     | string                  | Card type (one of `summary`, `summary_large_image`, `player`), defaults to `summary_large_image`       |
-| `twitter.site`                     | string                  | The Twitter @username the card should be attributed to.                                                                                                                                                                                                                                                                                              |
-| `twitter.title`                    | string                  | A concise title for the related content. Note- iOS, Android: Truncated to two lines in timeline and expanded Tweet ; Web: Truncated to one line in timeline and expanded Tweet                                                                                                                                                                       |
-| `twitter.description`              | string                  | A description that concisely summarizes the content as appropriate for presentation within a Tweet. You should not re-use the title as the description or use this field to describe the general services provided by the website. Note- iOS, Android: Not displayed ; Web: Truncated to three lines in timeline and expanded Tweet                  |
-| `twitter.image`                    | string(url)             | A URL to a unique image representing the content of the page. Images for this Card support an aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Images must be less than 5MB in size. JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF will be used. SVG is not supported. |
-| `twitter.imageAlt`                 | string                  | A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters.                                                                                                                                                                                                               |
-| `twitter.player`                   | string                  | Url for the video to play in the card. Only used with the `player` type card.  |
-| `twitter.playerWidth`              | number                  | Width of the player that plays the content on twitter (in Pixels). Only used with the `player` type card.  |
-| `twitter.playerHeight`             | number                  | Height of the player that plays the content on twtter (in Pixels). ONly used with the `player` type card.    |    
-| `jsonLd`                           | object                  | Data in `ld+json` format. [See Examples](#json-dl-example).                                                                                                                                                                                                                                                                                          |
-
-### Open Graph
-
-For the full specification please check out http://ogp.me/
-
-Svelte SEO currently supports:
-
-- [basic](#basic-example)
-- [article](#article-example)
-
-#### Basic Example
-
 ```svelte
+<!-- src/routes/+layout.svelte -->
 <script>
-  import SvelteSeo from "svelte-seo";
+    import SvelteSeo from "svelte-seo";
 </script>
 
 <SvelteSeo
-  openGraph={{
-    title: 'Open Graph Title',
-    description: 'Open Graph Description',
-    url: 'https://www.example.com/page',
-    type: 'website',
-    images: [
-      {
-        url: 'https://www.example.com/images/og-image.jpg',
-        width: 850,
-        height: 650,
-        alt: 'Og Image Alt'
-      }
-     ]
-  }}
+    title = "Default Title"
+    themeColor = "red"
+    notranslate = {true}
 />
+
+<slot/>
+<!------------->
+
+<!-- src/routes/+page.svelte -->
+<script>
+	import SvelteSeo from "svelte-seo";
+</script>
+
+<SvelteSeo
+  title = "Home page"
+  themeColor = "blue"
+/>
+<!----------------->
+
+<!-- src/routes/other/+page.svelte -->
+ <!-- Contents go here -->
+<!--------------------->
 ```
 
-#### Article Example
+In the project structure above, `src/routes/+page.svelte` will not inherit the default `title` and `themeColor` because we override them but `src/routes/other/+page.svelte` will inherit those properties since we did not override them inside the page.
 
-```svelte
-<script>
-  import SvelteSeo from "svelte-seo";
-</script>
+### Configuring the component inside your layout
 
-<SvelteSeo
-  openGraph={{
-    title: "Open Graph Article Title",
-    description: "Description of open graph article",
-    type: "article",
-    url: "https://www.example.com/articles/article-title",
-    article: {
-      publishedTime: "2020-08-03T17:31:37Z",
-      modifiedTime: "2020-08-20T09:31:37Z",
-      expirationTime: "2025-12-21T17:31:37Z",
-      section: "Section II",
-      authors: [
-        "https://www.example.com/authors/@firstnameA-lastnameA",
-        "https://www.example.com/authors/@firstnameB-lastnameB",
-      ],
-      tags: ["Tag A", "Tag B", "Tag C"],
-    },
-    images: [
-      {
-        url: "https://www.example.com/images/cover.jpg",
-        width: 850,
-        height: 650,
-        alt: "Og Image Alt",
-      },
-    ],
-  }}
-/>
-```
+There are instances where you might not want to import the component for every page but still set the SEO properties. We can accomplish this with the use of layout and page data.
 
-### Twitter Link Preview Card
+Using this method, we will return an object inside our load function that contains SEO properties.
 
-Allows Twitter Link Preview Cards (otherwise known as a Summary Card with Large Image) to be rendered. For more info check [here](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image)
-
-#### Twitter Example
-
-```svelte
-<script>
-  import SvelteSeo from "svelte-seo";
-</script>
-
-<SvelteSeo
-  twitter={{
-    site: "@username",
-    title: "Twitter Card Title",
-    description: "Description of Twitter Card",
-    image: "https://www.example.com/images/cover.jpg",
-    imageAlt: "Alt text for the card!",
-  }}
-/>
-```
-
-### JSON-LD
-
-JSON-LD allow for more customized and rich representation for example in search results.
-
-To discover all the different content types JSON-LD offers check out: https://developers.google.com/search/docs/guides/search-gallery
-
-#### JSON-LD Example
-
-```svelte
-<script>
-  import SvelteSeo from "svelte-seo";
-</script>
-
-<SvelteSeo
-  jsonLd={{
-    '@type': 'Article',
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': 'https://example.com/article'
-    },
-    headline: 'Article headline',
-    image: [
-      'https://example.com/photos/1x1/photo.jpg',
-      'https://example.com/photos/4x3/photo.jpg',
-      'https://example.com/photos/16x9/photo.jpg'
-    ],
-    datePublished: '2020-08-03T17:31:37Z',
-    dateModified: '2020-08-20T09:31:37Z',
-    author: {
-      '@type': 'Person',
-      name: 'John Doe'
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Google',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://example.com/logo.jpg'
-      }
+```javascript
+// src/routes/+page.js
+export const load = async()=>{
+    return {
+        SEO: {
+            title: "My page title",
+            description: "My page description"
+            themeColor: "red"
+            canonical: "www.example.com"
+        }
     }
-  }}
+}
+```
+
+```svelte
+<!-- src/routes/+layout.svelte -->
+<script>
+  import SvelteSeo from "svelte-seo";
+  import { page } from "$app/stores";
+</script>
+
+<SvelteSeo
+  title={$page.data.SEO.title}
+  description={$page.data.SEO.description}
+  themeColor={$page.data.SEO.themeColor}
+  canonical={$page.data.SEO.canonical}
 />
 ```
+
+## Component Properties
+
+| Property                  | Type                                                                                                                                                                                                                             | Default   | Description                                                                                                                                                                                      |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| title                     | string                                                                                                                                                                                                                           | undefined | The page's title which will appear in search results                                                                                                                                             |
+| description               | string                                                                                                                                                                                                                           | undefined | The page's description which will appear in search results                                                                                                                                       |
+| keywords                  | string                                                                                                                                                                                                                           | undefined | These are keywords which give search engines extra information about a page's content. [It's not necessary to use it these days](https://www.semrush.com/blog/meta-keywords/).                   |
+| base                      | string                                                                                                                                                                                                                           | undefined | Specifies a default URL and a default target for all links on a page                                                                                                                             |
+| applicationName           | string                                                                                                                                                                                                                           | undefined | The value must be a short free-form string giving the name of the web application that the page represents.                                                                                      |
+| themeColor                | string                                                                                                                                                                                                                           | undefined | Indicates a suggested color that user agents should use to customize the display of the page or of the surrounding user interface.                                                               |
+| nofollow                  | Boolean                                                                                                                                                                                                                          | false     | prevents Googlebot from following any links on the page.                                                                                                                                         |
+| noindex                   | Boolean                                                                                                                                                                                                                          | false     | prevents the page from being included in the index.                                                                                                                                              |
+| nositelinkssearchbox      | Boolean                                                                                                                                                                                                                          | false     | Opt out of Google's Sitelinks search box                                                                                                                                                         |
+| notranslate               | Boolean                                                                                                                                                                                                                          | undefined | Prevents Google from translating the page                                                                                                                                                        |
+| canonical                 | string                                                                                                                                                                                                                           | undefined | Value is the canonical URL of the page                                                                                                                                                           |
+| amp                       | string                                                                                                                                                                                                                           | undefined | A URL to the amp version of the webpage                                                                                                                                                          |
+| manifest                  | string                                                                                                                                                                                                                           | undefined | The URL to a a JSON file that tells the browser about your Progressive Web App and how it should behave when installed on the user's desktop or mobile device.                                   |
+| languageAlternates        | _Array_<{ hreflang: _string_; href: _string_ }>                                                                                                                                                                                  | undefined | Tell Google about the variations of your content in other languages                                                                                                                              |
+| twitter.title             | string                                                                                                                                                                                                                           | undefined | Title of content (max 70 characters)                                                                                                                                                             |
+| twitter.description       | string                                                                                                                                                                                                                           | undefined | Description of content (maximum 200 characters)                                                                                                                                                  |
+| twitter.image             | string                                                                                                                                                                                                                           | undefined | URL of image to use in the card. Images must be less than 5MB in size. JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF will be used. SVG is not supported. |
+| twitter.imageAlt          | string                                                                                                                                                                                                                           | undefined | A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters.                                                           |
+| twitter.card              | "summary" , "summary_large_image" , "player" , "app"                                                                                                                                                                             | undefined | The card type                                                                                                                                                                                    |
+| twitter.site              | string                                                                                                                                                                                                                           | undefined | @username of website.                                                                                                                                                                            |
+| twitter.creator           | string                                                                                                                                                                                                                           | undefined | @username of content creator                                                                                                                                                                     |
+| twitter.player            | string                                                                                                                                                                                                                           | undefined | HTTPS URL of player iframe                                                                                                                                                                       |
+| twitter.playerWidth       | string                                                                                                                                                                                                                           | undefined | Width of iframe in pixels                                                                                                                                                                        |
+| twitter.playerHeight      | string                                                                                                                                                                                                                           | undefined | Height of iframe in pixels                                                                                                                                                                       |
+| twitter.playerStream      | string                                                                                                                                                                                                                           | undefined | URL to raw video or audio stream                                                                                                                                                                 |
+| twitter.appNameIphone     | string                                                                                                                                                                                                                           | undefined | Name of your iPhone app                                                                                                                                                                          |
+| twitter.appIdIphone       | string                                                                                                                                                                                                                           | undefined | Your app ID in the iTunes App Store (Note: NOT your bundle ID)                                                                                                                                   |
+| twitter.appUrlIphone      | string                                                                                                                                                                                                                           | undefined | Your app’s custom URL scheme (you must include ”://” after your scheme name)                                                                                                                     |
+| twitter.appNameIpad       | string                                                                                                                                                                                                                           | undefined | Name of your iPad optimized app                                                                                                                                                                  |
+| twitter.appIdIpad         | string                                                                                                                                                                                                                           | undefined | Your app ID in the iTunes App Store                                                                                                                                                              |
+| twitter.appNameGoogleplay | string                                                                                                                                                                                                                           | undefined | Name of your Android app                                                                                                                                                                         |
+| twitter.appIdGoogleplay   | string                                                                                                                                                                                                                           | undefined | Your app ID in the Google Play Store                                                                                                                                                             |
+| twitter.appUrlGoogleplay  | string                                                                                                                                                                                                                           | undefined | Your app’s custom URL scheme                                                                                                                                                                     |
+| facebook.appId            | string                                                                                                                                                                                                                           | undefined | A Facebook App ID is a unique number that identifies your app when you request ads from Audience Network.                                                                                        |
+| openGraph.title           | string                                                                                                                                                                                                                           | undefined | The title of your object as it should appear within the graph                                                                                                                                    |
+| openGraph.type            | string                                                                                                                                                                                                                           | undefined | The type of your object, e.g., "video.movie". Depending on the type you specify, other properties may also be required.                                                                          |
+| openGraph.url             | string                                                                                                                                                                                                                           | undefined | The canonical URL of your object that will be used as its permanent ID in the graph                                                                                                              |
+| openGraph.audio           | string                                                                                                                                                                                                                           | undefined | A URL to an audio file to accompany this object.                                                                                                                                                 |
+| openGraph.audioSecure_url | string                                                                                                                                                                                                                           | undefined | An alternate URL to use if the webpage requires HTTPS.                                                                                                                                           |
+| openGraph.audioType       | string                                                                                                                                                                                                                           | undefined | The mime type for the audio                                                                                                                                                                      |
+| openGraph.description     | string                                                                                                                                                                                                                           | undefined | A one to two sentence description of your object.                                                                                                                                                |
+| openGraph.determiner      | string                                                                                                                                                                                                                           | undefined | The word that appears before this object's title in a sentence. An enum of (a, an, the, "", auto). If                                                                                            |
+| openGraph.locale          | string                                                                                                                                                                                                                           | undefined | The locale these tags are marked up in. Of the format `language_TERRITORY`. Default is `en_US`.                                                                                                  |
+| openGraph.localeAlternate | string[]                                                                                                                                                                                                                         | undefined | An [array](https://ogp.me/#array) of other locales this page is available in.                                                                                                                    |
+| openGraph.site_name       | string                                                                                                                                                                                                                           | undefined | If your object is part of a larger web site, the name which should be displayed for the overall site. e.g., "IMDb".                                                                              |
+| openGraph.videos          | `Array<{url: string; secure_url?: string; type?: string; alt?:  string; width?: number \| string; height?: number \| string}>`                                                                                                   | undefined | Contains properties about videos pertaining to the web page                                                                                                                                      |
+| openGraph.images          | `Array<{  url?: string;secure_url?: string; type?: string; alt?: string; width?: number \| string; height?: number \| string}>`                                                                                                  | undefined | Contains properties about images pertaining to the web page                                                                                                                                      |
+| openGraph.music           | `{ duration?: number \| string; album?: string; albumDisc?: number; albumTrack?: number; musician?: string; creator?: string; song?: string; songDisc?: number \| string; songTrack?: number \| string; release_date?: string;}` | undefined | OpenGraph for music files                                                                                                                                                                        |
+| openGraph.movie           | `{ actor?: string[]; actorRole?: string; director?: string[]; writer?: string[]; duration?: number \| string; release_date?: string; tag?: string[]; series?: string;}`                                                          | undefined | OpenGraph for a movie                                                                                                                                                                            |
+| openGraph.article         | `{published_time?: string; modified_time?: string; expiration_time?: string; author?: string[]; section?: string; tag?: string[];}`                                                                                              | undefined | OpenGraph for an article                                                                                                                                                                         |
+| openGraph.book            | `{ author?: string[]; isbn?: string \| number; release_date?: string; tag?: string[] }`                                                                                                                                          | undefined | OpenGraph for a book                                                                                                                                                                             |
+| openGraph.profile         | `{ first_name?: string;last_name?: string; username?: string; gender?: "male" \| "female";}`                                                                                                                                     | undefined | OpenGraph for a profile                                                                                                                                                                          |
 
 ## Acknowledgements
 
