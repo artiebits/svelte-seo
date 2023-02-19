@@ -53,7 +53,7 @@
   /**@type {import("./types").SvelteSeo['jsonLd']}*/
   export let jsonLd = undefined;
 
-  import OpenGraphComponent from "./openGraph.svelte";
+  import OpenGraphComponent from "./open-graph.svelte";
 </script>
 
 <svelte:head>
