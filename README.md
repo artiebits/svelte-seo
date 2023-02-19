@@ -1,8 +1,10 @@
 # Svelte SEO
 
+Optimize your Svelte app for search engines and social media with meta tags, Open Graph, and JSON-LD.
+
 [![Build Status](https://travis-ci.org/artiebits/svelte-seo.svg?branch=master)](https://travis-ci.org/artiebits/svelte-seo)
 
-Svelte SEO is a powerful and easy-to-use package designed to optimize your Svelte app for search engines. With Svelte SEO, you can easily add essential meta tags, social meta tags, and JSON-LD to your pages to improve your website's visibility and ranking in search results.
+Svelte SEO is a powerful and easy-to-use package designed to optimize your Svelte app for search engines and social media. By adding essential meta tags, Open Graph, Twitter Card tags, and JSON-LD to your pages, Svelte SEO improves your website's visibility and ranking in search results.
 
 **Sponsor Svelte SEO**
 
