@@ -129,7 +129,7 @@
       {@const transformed = key
         .replace(/([a-z])([A-Z])/g, "$1:$2")
         .toLowerCase()}
-      <!-- The `transformed` variable changecs eg, twitter.title into twitter:title
+      <!-- The `transformed` variable changes eg, twitter.title into twitter:title
                 It loops over all the properties and changes the '.' into ':'
             -->
       <meta name="twitter:{transformed}" content={value} />

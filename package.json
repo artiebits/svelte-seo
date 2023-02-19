@@ -36,9 +36,15 @@
   "type": "module",
   "keywords": [
     "svelte",
+    "sveltekit",
     "sapper",
     "seo",
-    "ssr"
+    "ssr",
+    "search engines",
+    "meta tags",
+    "open graph",
+    "open graph tags",
+    "JSON-LD"
   ],
   "lint-staged": {
     "*.svelte": "prettier --write",
