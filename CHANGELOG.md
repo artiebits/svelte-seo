@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.5.2](https://www.github.com/artiebits/svelte-seo/compare/v1.5.1...v1.5.2) (2023-02-19)
+
+
+### Miscellaneous Chores
+
+* release 1.5.2 ([03a9e92](https://www.github.com/artiebits/svelte-seo/commit/03a9e92fae1d9028c9b889d022fcc5eca1023915))
+
 ### [1.5.1](https://www.github.com/artiebits/svelte-seo/compare/v1.4.0...v1.5.1) (2023-02-19)
 
 ### Bug Fixes
