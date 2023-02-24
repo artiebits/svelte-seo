@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.5.3](https://www.github.com/artiebits/svelte-seo/compare/v1.5.2...v1.5.3) (2023-02-24)
+
+
+### Bug Fixes
+
+* reference error in the opengraph.svelte ([#58](https://www.github.com/artiebits/svelte-seo/issues/58)) ([65c0542](https://www.github.com/artiebits/svelte-seo/commit/65c0542fa89b05c2aafc5f36f53e01c1868f325b))
+
 ### [1.5.2](https://www.github.com/artiebits/svelte-seo/compare/v1.5.1...v1.5.2) (2023-02-19)
 
 
