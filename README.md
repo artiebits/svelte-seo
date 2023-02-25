@@ -71,102 +71,104 @@ You can provide additional properties to SvelteSeo component. Here is an example
   canonical="https://www.primal-movement.com/"
   keywords="primal movement, natural movement, squatting, lunging, crawling, jumping, fitness"
   openGraph={{
-    title: 'Primal Movement | Natural Movement for Better Health',
-    description: 'Learn about primal movement exercises and how they can benefit your fitness.',
-    image: 'https://www.primal-movement.com/images/squatting.jpg',
-    url: 'https://www.primal-movement.com/',
-    type: 'website',
+    title: "Primal Movement | Natural Movement for Better Health",
+    description:
+      "Learn about primal movement exercises and how they can benefit your fitness.",
+    image: "https://www.primal-movement.com/images/squatting.jpg",
+    url: "https://www.primal-movement.com/",
+    type: "website",
     images: [
       {
-        url: 'https://www.primal-movement.com/images/squatting.jpg',
+        url: "https://www.primal-movement.com/images/squatting.jpg",
         width: 800,
         height: 600,
-        alt: 'Squatting'
+        alt: "Squatting",
       },
       {
-        url: 'https://www.primal-movement.com/images/lunging.jpg',
+        url: "https://www.primal-movement.com/images/lunging.jpg",
         width: 900,
         height: 800,
-        alt: 'Crawling'
+        alt: "Crawling",
       },
       {
-        url: 'https://www.primal-movement.com/images/crawling.jpg',
-        alt: 'Jumping'
+        url: "https://www.primal-movement.com/images/crawling.jpg",
+        alt: "Jumping",
       },
       {
-        url: 'https://www.primal-movement.com/images/jumping.jpg',
-      }
+        url: "https://www.primal-movement.com/images/jumping.jpg",
+      },
     ],
-    site_name: 'Primal Movement'
+    site_name: "Primal Movement",
   }}
   twitter={{
-    card: 'summary_large_image',
-    site: '@primalmovement',
-    title: 'Primal Movement | Natural Movement for Better Health',
-    description: 'Learn about primal movement exercises and how they can benefit your fitness.',
-    image: 'https://www.primal-movement.com/images/squatting.jpg',
+    card: "summary_large_image",
+    site: "@primalmovement",
+    title: "Primal Movement | Natural Movement for Better Health",
+    description:
+      "Learn about primal movement exercises and how they can benefit your fitness.",
+    image: "https://www.primal-movement.com/images/squatting.jpg",
   }}
   facebook={{
-    appId: '1234567890'
+    appId: "1234567890",
   }}
 />
 ```
 
 ## Svelte SEO Properties
 
-| Property                  | Type                                                 | Description                                                                                                                                                 |
-|---------------------------|------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `title`                   | `string`                                             | A page title that will appear in search results.                                                                                                            |
-| `description`             | `string`                                             | A page description that will appear in search results.                                                                                                      |
-| `keywords`                | `string`                                             | Keywords that give search engines more information about the content of the page.                                                                           |
-| `base`                    | `string`                                             | A default URL and target for all links on a page.                                                                                                           |
-| `applicationName`         | `string`                                             | The name of the web application that the page represents.                                                                                                   |
-| `themeColor`              | `string`                                             | A suggested color that user agents should use to customize the display of the page or the surrounding user interface.                                       |
-| `nofollow`                | `boolean` (default `false`)                          | Prevents Googlebot from following any links on the page.                                                                                                    |
-| `noindex`                 | `boolean` (default `false`)                          | Prevents the page from being included in the index.                                                                                                         |
-| `nositelinkssearchbox`    | `boolean` (default `false`)                          | Opt out of Google's Sitelinks search box.                                                                                                                   |
-| `notranslate`             | `boolean`                                            | Prevents Google from translating the page.                                                                                                                  |
-| `canonical`               | `string`                                             | The canonical URL of the page.                                                                                                                              |
-| `amp`                     | `string`                                             | A URL to the AMP version of the webpage.                                                                                                                    |
+| Property                  | Type                                                 | Description                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `title`                   | `string`                                             | A page title that will appear in search results.                                                                                                             |
+| `description`             | `string`                                             | A page description that will appear in search results.                                                                                                       |
+| `keywords`                | `string`                                             | Keywords that give search engines more information about the content of the page.                                                                            |
+| `base`                    | `string`                                             | A default URL and target for all links on a page.                                                                                                            |
+| `applicationName`         | `string`                                             | The name of the web application that the page represents.                                                                                                    |
+| `themeColor`              | `string`                                             | A suggested color that user agents should use to customize the display of the page or the surrounding user interface.                                        |
+| `nofollow`                | `boolean` (default `false`)                          | Prevents Googlebot from following any links on the page.                                                                                                     |
+| `noindex`                 | `boolean` (default `false`)                          | Prevents the page from being included in the index.                                                                                                          |
+| `nositelinkssearchbox`    | `boolean` (default `false`)                          | Opt out of Google's Sitelinks search box.                                                                                                                    |
+| `notranslate`             | `boolean`                                            | Prevents Google from translating the page.                                                                                                                   |
+| `canonical`               | `string`                                             | The canonical URL of the page.                                                                                                                               |
+| `amp`                     | `string`                                             | A URL to the AMP version of the webpage.                                                                                                                     |
 | `manifest`                | `string`                                             | The URL to a JSON file that tells the browser about your Progressive Web App and how it should behave when installed on the user's desktop or mobile device. |
-| `languageAlternates`      | `Array<{ hreflang: string; href: string }>`          | Provides Google with information about the variations of your content in other languages.                                                                   |
-| `twitter.title`           | `string`                                             | The title of the content, maximum 70 characters.                                                                                                            |
-| `twitter.description`     | `string`                                             | A description of the content, maximum 200 characters.                                                                                                       |
-| `twitter.image`           | `string`                                             | The URL of an image to use in the Twitter card. Images must be less than 5MB in size.                                                                       |
-| `twitter.imageAlt`        | `string`                                             | A text description of the image conveying its essential nature to visually impaired users. Maximum 420 characters.                                          |
-| `twitter.card`            | "summary" , "summary_large_image" , "player" , "app" | The type of Twitter card to use.                                                                                                                            |
-| `twitter.site`            | `string`                                             | The @username of the website.                                                                                                                               |
-| `twitter.creator`         | `string`                                             | The @username of the content creator.                                                                                                                       |
-| `twitter.player`          | `string`                                             | The HTTPS URL of the player iframe.                                                                                                                         |
-| `twitter.playerWidth`     | `string`                                             | The width of the iframe in pixels.                                                                                                                          |
-| `twitter.playerHeight`    | `string`                                             | The height of the iframe in pixels.                                                                                                                         |
-| `twitter.playerStream`    | `string`                                             | The URL to the raw video or audio stream.                                                                                                                   |
-| `twitter.appNameIphone`   | `string`                                             | The name of your iPhone app.                                                                                                                                |
-| twitter.appUrlIphone      | `string`                                             | The custom URL scheme for your app on iPhone (include ”://” after your scheme name)                                                                         |
-| twitter.appNameIpad       | `string`                                             | The name of your iPad-optimized app                                                                                                                         |
-| twitter.appIdIpad         | `string`                                             | Your app's ID in the iTunes App Store                                                                                                                       |
-| twitter.appNameGoogleplay | `string`                                             | The name of your Android app                                                                                                                                |
-| twitter.appIdGoogleplay   | `string`                                             | Your app's ID in the Google Play Store                                                                                                                      |
-| twitter.appUrlGoogleplay  | `string`                                             | The custom URL scheme for your app on Google Play                                                                                                           |
-| facebook.appId            | `string`                                             | A unique number that identifies your app when you request ads from Audience Network, known as a Facebook App ID                                             |
-| openGraph.title           | `string`                                             | The title of your object as it should appear within the graph                                                                                               |
-| openGraph.type            | `string`                                             | The type of your object, such as "video.movie". Depending on the type, other properties may also be required.                                               |
-| openGraph.url             | `string`                                             | The canonical URL of your object that will be used as its permanent ID in the graph                                                                         |
-| openGraph.audio           | `string`                                             | An audio file to accompany the content.                                                             |
-| openGraph.audioSecure_url | `string`                                             | An alternate URL to use if the webpage requires HTTPS                                                                                                       |
-| openGraph.audioType       | `string`                                             | The MIME type for the audio                                                                                                                                 |
-| openGraph.description     | `string`                                             | A one- or two-sentence description of your object                                                                                                           |
-| openGraph.determiner      | `string`                                             | The word that appears before the title, e.g., "the" or "a".                                                                                                 |
-| openGraph.locale          | `string`                                             | The locale of the content, e.g., "en_US".                                                                                                                   |
-| openGraph.localeAlternate | `string[]`                                           | Alternate locales for the content. https://ogp.me/#array                                                   |
-| openGraph.site_name       | `string`                                             | The name of the website where the content is hosted.                                         |
-| openGraph.images          | `Array`                                              | Properties about images related to the web page.                                                                                                            |
-| openGraph.videos          | [`OpenGraphVideo`](./src/lib/types.d.ts)   | Properties about videos related to the web page.                                                                                                            |
-| openGraph.music           | [`OpenGraphMusic`](./src/lib/types.d.ts)   | OpenGraph for music files.                                                                                                                                  |
-| openGraph.movie           | [`OpenGraphMovie`](./src/lib/types.d.ts)   | OpenGraph for a movie.                                                                                                                                      |
-| openGraph.article         | [`OpenGraphArticle`](./src/lib/types.d.ts) | OpenGraph for an article.                                                                                                                                   |
-| openGraph.book            | [`OpenGraphBook`](./src/lib/types.d.ts)    | OpenGraph for a book.                                                                                                                                       |
-| openGraph.profile         | [`OpenGraphProfile`](./src/lib/types.d.ts) | OpenGraph for a profile.                                                                                                                                    |
+| `languageAlternates`      | `Array<{ hreflang: string; href: string }>`          | Provides Google with information about the variations of your content in other languages.                                                                    |
+| `twitter.title`           | `string`                                             | The title of the content, maximum 70 characters.                                                                                                             |
+| `twitter.description`     | `string`                                             | A description of the content, maximum 200 characters.                                                                                                        |
+| `twitter.image`           | `string`                                             | The URL of an image to use in the Twitter card. Images must be less than 5MB in size.                                                                        |
+| `twitter.imageAlt`        | `string`                                             | A text description of the image conveying its essential nature to visually impaired users. Maximum 420 characters.                                           |
+| `twitter.card`            | "summary" , "summary_large_image" , "player" , "app" | The type of Twitter card to use.                                                                                                                             |
+| `twitter.site`            | `string`                                             | The @username of the website.                                                                                                                                |
+| `twitter.creator`         | `string`                                             | The @username of the content creator.                                                                                                                        |
+| `twitter.player`          | `string`                                             | The HTTPS URL of the player iframe.                                                                                                                          |
+| `twitter.playerWidth`     | `string`                                             | The width of the iframe in pixels.                                                                                                                           |
+| `twitter.playerHeight`    | `string`                                             | The height of the iframe in pixels.                                                                                                                          |
+| `twitter.playerStream`    | `string`                                             | The URL to the raw video or audio stream.                                                                                                                    |
+| `twitter.appNameIphone`   | `string`                                             | The name of your iPhone app.                                                                                                                                 |
+| twitter.appUrlIphone      | `string`                                             | The custom URL scheme for your app on iPhone (include ”://” after your scheme name)                                                                          |
+| twitter.appNameIpad       | `string`                                             | The name of your iPad-optimized app                                                                                                                          |
+| twitter.appIdIpad         | `string`                                             | Your app's ID in the iTunes App Store                                                                                                                        |
+| twitter.appNameGoogleplay | `string`                                             | The name of your Android app                                                                                                                                 |
+| twitter.appIdGoogleplay   | `string`                                             | Your app's ID in the Google Play Store                                                                                                                       |
+| twitter.appUrlGoogleplay  | `string`                                             | The custom URL scheme for your app on Google Play                                                                                                            |
+| facebook.appId            | `string`                                             | A unique number that identifies your app when you request ads from Audience Network, known as a Facebook App ID                                              |
+| openGraph.title           | `string`                                             | The title of your object as it should appear within the graph                                                                                                |
+| openGraph.type            | `string`                                             | The type of your object, such as "video.movie". Depending on the type, other properties may also be required.                                                |
+| openGraph.url             | `string`                                             | The canonical URL of your object that will be used as its permanent ID in the graph                                                                          |
+| openGraph.audio           | `string`                                             | An audio file to accompany the content.                                                                                                                      |
+| openGraph.audioSecure_url | `string`                                             | An alternate URL to use if the webpage requires HTTPS                                                                                                        |
+| openGraph.audioType       | `string`                                             | The MIME type for the audio                                                                                                                                  |
+| openGraph.description     | `string`                                             | A one- or two-sentence description of your object                                                                                                            |
+| openGraph.determiner      | `string`                                             | The word that appears before the title, e.g., "the" or "a".                                                                                                  |
+| openGraph.locale          | `string`                                             | The locale of the content, e.g., "en_US".                                                                                                                    |
+| openGraph.localeAlternate | `string[]`                                           | Alternate locales for the content. https://ogp.me/#array                                                                                                     |
+| openGraph.site_name       | `string`                                             | The name of the website where the content is hosted.                                                                                                         |
+| openGraph.images          | `Array`                                              | Properties about images related to the web page.                                                                                                             |
+| openGraph.videos          | [`OpenGraphVideo`](./src/lib/types.d.ts)             | Properties about videos related to the web page.                                                                                                             |
+| openGraph.music           | [`OpenGraphMusic`](./src/lib/types.d.ts)             | OpenGraph for music files.                                                                                                                                   |
+| openGraph.movie           | [`OpenGraphMovie`](./src/lib/types.d.ts)             | OpenGraph for a movie.                                                                                                                                       |
+| openGraph.article         | [`OpenGraphArticle`](./src/lib/types.d.ts)           | OpenGraph for an article.                                                                                                                                    |
+| openGraph.book            | [`OpenGraphBook`](./src/lib/types.d.ts)              | OpenGraph for a book.                                                                                                                                        |
+| openGraph.profile         | [`OpenGraphProfile`](./src/lib/types.d.ts)           | OpenGraph for a profile.                                                                                                                                     |
 
 ### Open Graph
 
@@ -178,12 +180,13 @@ Svelte SEO supports all Twitter Card Tags. For more information, check out the T
 
 ```svelte
 twitter={{
-  card: 'summary_large_image',
-  site: '@primalmovement',
-  title: 'Primal Movement | Natural Movement for Better Health',
-  description: 'Learn about primal movement exercises and how they can benefit your fitness.',
-  image: 'https://www.primal-movement.com/images/squatting.jpg',
-  imageAlt: 'Squatting'
+  card: "summary_large_image",
+  site: "@primalmovement",
+  title: "Primal Movement | Natural Movement for Better Health",
+  description:
+    "Learn about primal movement exercises and how they can benefit your fitness.",
+  image: "https://www.primal-movement.com/images/squatting.jpg",
+  imageAlt: "Squatting",
 }}
 ```
 
@@ -191,7 +194,7 @@ twitter={{
 
 ```svelte
 facebook={{
-  appId: '1234567890'
+  appId: "1234567890",
 }}
 ```
 
@@ -203,9 +206,10 @@ JSON-LD provides a more customizable and detailed representation of content in s
 jsonLd={{
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Primal Movement | Natural Movement for Better Health",
-  "description": "Learn about primal movement exercises and how they can benefit your fitness.",
-  "url": "https://www.primal-movement.com"
+  name: "Primal Movement | Natural Movement for Better Health",
+  description:
+    "Learn about primal movement exercises and how they can benefit your fitness.",
+  url: "https://www.primal-movement.com",
 }}
 ```
 
