@@ -141,7 +141,7 @@
   {/if}
 
   {#if jsonLd}
-    {@const data = Object.assign({"@context": "https://schema.org"}, jsonLd)}
+    {@const data = Object.assign({ "@context": "https://schema.org" }, jsonLd)}
     {@html `<script type="application/ld+json">${
       JSON.stringify(data) + "<"
     }/script>`}
