@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.5.4](https://www.github.com/artiebits/svelte-seo/compare/v1.5.3...v1.5.4) (2023-09-07)
+
+
+### Bug Fixes
+
+* render JSON-LD correctly ([#70](https://www.github.com/artiebits/svelte-seo/issues/70)) ([6671834](https://www.github.com/artiebits/svelte-seo/commit/667183461ca0d142d1e791bb2999d8e48ea9a53b))
+
 ### [1.5.3](https://www.github.com/artiebits/svelte-seo/compare/v1.5.2...v1.5.3) (2023-02-24)
 
 
