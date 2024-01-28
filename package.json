@@ -52,5 +52,10 @@
   },
   "dependencies": {
     "schema-dts": "^1.1.2"
+  },
+  "exports": {
+    ".": {
+      "svelte": "./index.js"
+    }
   }
 }
