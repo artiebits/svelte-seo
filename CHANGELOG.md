@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://www.github.com/artiebits/svelte-seo/compare/v1.5.4...v1.6.0) (2024-01-28)
+
+
+### Features
+
+* add new Svelte Vite Plugin export condition ([#74](https://www.github.com/artiebits/svelte-seo/issues/74)) ([b9389ca](https://www.github.com/artiebits/svelte-seo/commit/b9389ca924c41ecf761e4cd87c3ce7eec8835833))
+
 ### [1.5.4](https://www.github.com/artiebits/svelte-seo/compare/v1.5.3...v1.5.4) (2023-09-07)
 
 
