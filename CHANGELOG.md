@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.6.1](https://www.github.com/artiebits/svelte-seo/compare/v1.6.0...v1.6.1) (2024-05-07)
+
+
+### Bug Fixes
+
+* Add types to package.json ([#83](https://www.github.com/artiebits/svelte-seo/issues/83)) ([4e5e25a](https://www.github.com/artiebits/svelte-seo/commit/4e5e25abbb6edb40ef9594b684088cb5789fe987))
+
 ## [1.6.0](https://www.github.com/artiebits/svelte-seo/compare/v1.5.4...v1.6.0) (2024-01-28)
 
 
