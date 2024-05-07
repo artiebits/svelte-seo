@@ -55,6 +55,7 @@
   },
   "exports": {
     ".": {
+      "types": "./index.d.ts",
       "svelte": "./index.js"
     }
   }
