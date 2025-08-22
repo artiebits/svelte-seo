@@ -55,7 +55,7 @@
   {/if}
 
   {#if languageAlternates}
-    {#each languageAlternates as { href, hreflang }}
+    {#each languageAlternates as { href, hreflang } (href)}
       <link rel="alternate" {href} {hreflang} />
     {/each}
   {/if}
@@ -94,7 +94,7 @@
   {/if}
 
   {#if twitter}
-    {#each Object.entries(twitter) as [key, value]}
+    {#each Object.entries(twitter) as [key, value] (key)}
       {@const transformed = key
         .replace(/([a-z])([A-Z])/g, "$1:$2")
         .toLowerCase()}

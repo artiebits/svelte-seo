@@ -4,7 +4,7 @@
 </script>
 
 {#if openGraph}
-  {#each Object.entries(openGraph) as [key, value]}
+  {#each Object.entries(openGraph) as [key, value] (key)}
     <!-- For openGraph, some of the keys have values as objects so we need to check
     before.
     -->
@@ -15,14 +15,14 @@
     {/if}
     {#if _type === "object"}
       {#if key === "images"}
-        {#each openGraph.images ?? [] as image}
-          {#each Object.entries(image) as [key, value]}
+        {#each openGraph.images ?? [] as image (image)}
+          {#each Object.entries(image) as [key, value] (key)}
             <meta property="og:image:{key}" content={value.toString()} />
           {/each}
         {/each}
       {:else if key === "videos"}
-        {#each openGraph.videos ?? [] as video}
-          {#each Object.entries(video) as [key, value]}
+        {#each openGraph.videos ?? [] as video (video.url)}
+          {#each Object.entries(video) as [key, value] (key)}
             {#if key === "url"}
               <meta property="og:video" content={value.toString()} />
             {:else}
@@ -31,20 +31,20 @@
           {/each}
         {/each}
       {:else if key === "localeAlternate"}
-        {#each openGraph.localeAlternate ?? [] as alternate}
+        {#each openGraph.localeAlternate ?? [] as alternate (alternate)}
           <meta property="og:locale:alternate" content={alternate} />
         {/each}
       {:else if key === "music"}
-        {#each Object.entries(openGraph.music ?? {}) as [key, value]}
+        {#each Object.entries(openGraph.music ?? {}) as [key, value] (key)}
           {@const transform = key
             .replace(/([a-z])([A-Z])/g, "$1:$2")
             .toLowerCase()}
           <meta property="music:{transform}" content={value.toString()} />
         {/each}
       {:else if key === "movie"}
-        {#each Object.entries(openGraph.movie ?? {}) as [key, value]}
+        {#each Object.entries(openGraph.movie ?? {}) as [key, value] (key)}
           {#if typeof value === "object"}
-            {#each value as propValue}
+            {#each value as propValue (propValue)}
               <meta property="video:{key}" content={propValue} />
             {/each}
           {:else}
@@ -55,9 +55,9 @@
           {/if}
         {/each}
       {:else if key === "article"}
-        {#each Object.entries(openGraph.article ?? {}) as [key, value]}
+        {#each Object.entries(openGraph.article ?? {}) as [key, value] (key)}
           {#if typeof value === "object"}
-            {#each value as propValue}
+            {#each value as propValue (propValue)}
               <meta property="article:{key}" content={propValue} />
             {/each}
           {:else}
@@ -68,9 +68,9 @@
           {/if}
         {/each}
       {:else if key === "book"}
-        {#each Object.entries(openGraph.book ?? {}) as [key, value]}
+        {#each Object.entries(openGraph.book ?? {}) as [key, value] (key)}
           {#if typeof value === "object"}
-            {#each value as propValue}
+            {#each value as propValue (propValue)}
               <meta property="book:{key}" content={propValue} />
             {/each}
           {:else}
@@ -81,7 +81,7 @@
           {/if}
         {/each}
       {:else if key === "profile"}
-        {#each Object.entries(openGraph.profile ?? {}) as [key, value]}
+        {#each Object.entries(openGraph.profile ?? {}) as [key, value] (key)}
           {@const transform = key
             .replace(/([a-z])([A-Z])/g, "$1:$2")
             .toLowerCase()}

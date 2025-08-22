@@ -9,7 +9,7 @@ test.describe("Testing OpenGraph meta tags", async () => {
     const element = page.locator("meta[property='og:title']");
     expect(element, "The tag must exist").toBeDefined();
     expect(await element.getAttribute("content")).toBe(
-      "Open Graph Article Title"
+      "Open Graph Article Title",
     );
   });
 
@@ -23,7 +23,7 @@ test.describe("Testing OpenGraph meta tags", async () => {
     const element = page.locator("meta[property='og:url']");
     expect(element, "The tag must exist").toBeDefined();
     expect(await element.getAttribute("content")).toBe(
-      "https://www.example.com"
+      "https://www.example.com",
     );
   });
 
@@ -67,7 +67,7 @@ test.describe("Testing OpenGraph meta tags", async () => {
     const element = page.locator("meta[property='og:audio']");
     expect(element, "The tag must exist").toBeDefined();
     expect(await element.getAttribute("content")).toBe(
-      "http://www.example.com.audio"
+      "http://www.example.com.audio",
     );
   });
 
@@ -75,7 +75,7 @@ test.describe("Testing OpenGraph meta tags", async () => {
     const element = page.locator("meta[property='og:audio:secure_url']");
     expect(element, "The tag must exist").toBeDefined();
     expect(await element.getAttribute("content")).toBe(
-      "https://www.example.com.audio"
+      "https://www.example.com.audio",
     );
   });
 
@@ -89,7 +89,7 @@ test.describe("Testing OpenGraph meta tags", async () => {
     const element = page.locator("meta[property='og:description']");
     expect(element, "The tag must exist").toBeDefined();
     expect(await element.getAttribute("content")).toBe(
-      "Description of open graph article"
+      "Description of open graph article",
     );
   });
 
@@ -153,7 +153,7 @@ test.describe("Testing OpenGraph meta tags", async () => {
     const element = page.locator("meta[property='music:album']");
     expect(element, "The tag must exist").toBeDefined();
     expect(await element.getAttribute("content")).toBe(
-      "http://open.spotify.com/album/7rq68qYz66mNdPfidhIEFa"
+      "http://open.spotify.com/album/7rq68qYz66mNdPfidhIEFa",
     );
   });
 
@@ -173,7 +173,7 @@ test.describe("Testing OpenGraph meta tags", async () => {
     const element = page.locator("meta[property='music:musician']");
     expect(element, "The tag must exist").toBeDefined();
     expect(await element.getAttribute("content")).toBe(
-      "https://your-profile.com"
+      "https://your-profile.com",
     );
   });
 
@@ -181,7 +181,7 @@ test.describe("Testing OpenGraph meta tags", async () => {
     const element = page.locator("meta[property='music:song']");
     expect(element, "The tag must exist").toBeDefined();
     expect(await element.getAttribute("content")).toBe(
-      "http://open.spotify.com/track/0pfHfdUNVwlXA0WDXznm2C"
+      "http://open.spotify.com/track/0pfHfdUNVwlXA0WDXznm2C",
     );
   });
 
@@ -195,7 +195,7 @@ test.describe("Testing OpenGraph meta tags", async () => {
     const element = page.locator("meta[property='music:creator']");
     expect(element, "The tag must exist").toBeDefined();
     expect(await element.getAttribute("content")).toBe(
-      "https://creator-profile.com"
+      "https://creator-profile.com",
     );
   });
 
@@ -245,7 +245,7 @@ test.describe("Testing OpenGraph meta tags", async () => {
     const element = page.locator("meta[property='video:series']");
     expect(element, "The tag must exist").toBeDefined();
     expect(await element.getAttribute("content")).toBe(
-      "https://www.series.com"
+      "https://www.series.com",
     );
   });
 
