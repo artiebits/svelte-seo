@@ -7,8 +7,8 @@ export interface SvelteSeo {
   keywords?: string;
   applicationName?: string;
   themeColor?: string;
-  nofollow: Boolean;
-  noindex: Boolean;
+  nofollow?: Boolean;
+  noindex?: Boolean;
   nositelinkssearchbox: Boolean;
   notranslate: Boolean;
   canonical?: string;
