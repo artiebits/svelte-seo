@@ -19,6 +19,7 @@ export interface SvelteSeo {
   facebook?: Facebook;
   openGraph?: OpenGraph;
   jsonLd?: Thing | WithContext<Thing>;
+  children?: Snippet<[]>;
 }
 
 declare interface Facebook {
