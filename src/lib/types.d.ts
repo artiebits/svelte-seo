@@ -23,11 +23,11 @@ export interface SvelteSeo {
   children?: Snippet<[]>;
 }
 
-declare interface Facebook {
+export interface Facebook {
   appId: string;
 }
 
-declare interface Twitter {
+export interface Twitter {
   title?: string;
   description?: string;
   image?: string;
@@ -49,7 +49,7 @@ declare interface Twitter {
   appUrlGoogleplay?: string;
 }
 
-declare interface OpenGraph {
+export interface OpenGraph {
   title?: string;
   type?: string;
   url?: string;
@@ -84,7 +84,7 @@ declare interface OpenGraph {
   profile?: OpenGraphProfile;
 }
 
-declare interface OpenGraphMusic {
+export interface OpenGraphMusic {
   duration?: number | string;
   album?: string;
   albumDisc?: number;
@@ -97,7 +97,7 @@ declare interface OpenGraphMusic {
   release_date?: string;
 }
 
-declare interface OpenGraphVideo {
+export interface OpenGraphVideo {
   actor?: string[];
   actorRole?: string;
   director?: string[];
@@ -108,7 +108,7 @@ declare interface OpenGraphVideo {
   series?: string;
 }
 
-declare interface OpenGraphArticle {
+export interface OpenGraphArticle {
   published_time?: string;
   modified_time?: string;
   expiration_time?: string;
@@ -117,14 +117,14 @@ declare interface OpenGraphArticle {
   tag?: string[];
 }
 
-declare interface OpenGraphBook {
+export interface OpenGraphBook {
   author?: string[];
   isbn?: string | number;
   release_date?: string;
   tag?: string[];
 }
 
-declare interface OpenGraphProfile {
+export interface OpenGraphProfile {
   first_name?: string;
   last_name?: string;
   username?: string;

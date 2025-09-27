@@ -1,8 +1,9 @@
 <script lang="ts">
-  import type { OpenGraph } from './types';
+  import type { OpenGraph as OpenGraphType } from './types';
+  import transformKey from "../utils/transform-key";
   
   interface Props {
-    openGraph: OpenGraph;
+    openGraph: OpenGraphType;
   }
   
   const { openGraph }: Props = $props();
@@ -10,89 +11,51 @@
 
 {#if openGraph}
   {#each Object.entries(openGraph) as [key, value] (key)}
-    <!-- For openGraph, some of the keys have values as objects so we need to check
-    before.
-    -->
-    {@const _type = typeof value}
-    {#if _type !== "object"}
-      {@const transform = key.replace(/([a-z])([A-Z])/g, "$1:$2").toLowerCase()}
-      <meta property="og:{transform}" content={value} />
-    {/if}
-    {#if _type === "object"}
-      {#if key === "images"}
-        {#each openGraph.images ?? [] as image (image)}
-          {#each Object.entries(image) as [key, value] (key)}
-            <meta property="og:image:{key}" content={value.toString()} />
+    {#if value === null || value === undefined}
+      <!-- Skip null/undefined values -->
+    {:else if typeof value === "string" || typeof value === "number"}
+      <!-- Simple string/number values -->
+      {@const transformed = transformKey(key)}
+      <meta property="og:{transformed}" content={value.toString()} />
+    {:else if key === "images" && Array.isArray(value)}
+      <!-- Images array -->
+      {#each value as image (image)}
+        {#each Object.entries(image) as [imgKey, imgValue] (imgKey)}
+          {#if imgValue !== null && imgValue !== undefined}
+            <meta property="og:image:{imgKey}" content={imgValue.toString()} />
+          {/if}
+        {/each}
+      {/each}
+    {:else if key === "videos" && Array.isArray(value)}
+      <!-- Videos array -->
+      {#each value as video (video.url)}
+        {#each Object.entries(video) as [vidKey, vidValue] (vidKey)}
+          {#if vidValue !== null && vidValue !== undefined}
+            {@const prop = vidKey === "url" ? "og:video" : `og:video:${vidKey}`}
+            <meta property={prop} content={vidValue.toString()} />
+          {/if}
+        {/each}
+      {/each}
+    {:else if key === "localeAlternate" && Array.isArray(value)}
+      <!-- Locale alternates -->
+      {#each value as alternate (alternate)}
+        <meta property="og:locale:alternate" content={alternate} />
+      {/each}
+    {:else if typeof value === "object" && value !== null}
+      <!-- Complex objects (music, movie, article, book, profile) -->
+      {@const prefix = key === "movie" ? "video" : key}
+      {#each Object.entries(value) as [objKey, objValue] (objKey)}
+        {#if Array.isArray(objValue)}
+          <!-- Handle arrays (actors, authors, tags, etc.) -->
+          {#each objValue as item (item)}
+            <meta property="{prefix}:{objKey}" content={item} />
           {/each}
-        {/each}
-      {:else if key === "videos"}
-        {#each openGraph.videos ?? [] as video (video.url)}
-          {#each Object.entries(video) as [key, value] (key)}
-            {#if key === "url"}
-              <meta property="og:video" content={value.toString()} />
-            {:else}
-              <meta property="og:video:{key}" content={value.toString()} />
-            {/if}
-          {/each}
-        {/each}
-      {:else if key === "localeAlternate"}
-        {#each openGraph.localeAlternate ?? [] as alternate (alternate)}
-          <meta property="og:locale:alternate" content={alternate} />
-        {/each}
-      {:else if key === "music"}
-        {#each Object.entries(openGraph.music ?? {}) as [key, value] (key)}
-          {@const transform = key
-            .replace(/([a-z])([A-Z])/g, "$1:$2")
-            .toLowerCase()}
-          <meta property="music:{transform}" content={value.toString()} />
-        {/each}
-      {:else if key === "movie"}
-        {#each Object.entries(openGraph.movie ?? {}) as [key, value] (key)}
-          {#if typeof value === "object"}
-            {#each value as propValue (propValue)}
-              <meta property="video:{key}" content={propValue} />
-            {/each}
-          {:else}
-            {@const transform = key
-              .replace(/([a-z])([A-Z])/g, "$1:$2")
-              .toLowerCase()}
-            <meta property="video:{transform}" content={value.toString()} />
-          {/if}
-        {/each}
-      {:else if key === "article"}
-        {#each Object.entries(openGraph.article ?? {}) as [key, value] (key)}
-          {#if typeof value === "object"}
-            {#each value as propValue (propValue)}
-              <meta property="article:{key}" content={propValue} />
-            {/each}
-          {:else}
-            {@const transform = key
-              .replace(/([a-z])([A-Z])/g, "$1:$2")
-              .toLowerCase()}
-            <meta property="article:{transform}" content={value.toString()} />
-          {/if}
-        {/each}
-      {:else if key === "book"}
-        {#each Object.entries(openGraph.book ?? {}) as [key, value] (key)}
-          {#if typeof value === "object"}
-            {#each value as propValue (propValue)}
-              <meta property="book:{key}" content={propValue} />
-            {/each}
-          {:else}
-            {@const transform = key
-              .replace(/([a-z])([A-Z])/g, "$1:$2")
-              .toLowerCase()}
-            <meta property="book:{transform}" content={value.toString()} />
-          {/if}
-        {/each}
-      {:else if key === "profile"}
-        {#each Object.entries(openGraph.profile ?? {}) as [key, value] (key)}
-          {@const transform = key
-            .replace(/([a-z])([A-Z])/g, "$1:$2")
-            .toLowerCase()}
-          <meta property="profile:{transform}" content={value} />
-        {/each}
-      {/if}
+        {:else if objValue !== null && objValue !== undefined}
+          <!-- Handle simple values -->
+          {@const transformed = transformKey(objKey)}
+          <meta property="{prefix}:{transformed}" content={objValue.toString()} />
+        {/if}
+      {/each}
     {/if}
   {/each}
 {/if}
