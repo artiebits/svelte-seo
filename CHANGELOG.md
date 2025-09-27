@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://www.github.com/artiebits/svelte-seo/compare/v1.6.1...v1.7.0) (2025-09-27)
+
+
+### Features
+
+* update code to use props ([#101](https://www.github.com/artiebits/svelte-seo/issues/101)) ([c2c51d7](https://www.github.com/artiebits/svelte-seo/commit/c2c51d7634ab9fac8f28e251ba9e106bddc553db))
+
 ### [1.6.1](https://www.github.com/artiebits/svelte-seo/compare/v1.6.0...v1.6.1) (2024-05-07)
 
 
