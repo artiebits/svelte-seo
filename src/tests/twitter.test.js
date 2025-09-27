@@ -7,7 +7,7 @@ test.describe("Loads twitter tags", () => {
 
   test("Loads twitter title tag correctly", async ({ page }) => {
     expect(
-      await page.locator("meta[name='twitter:title']").getAttribute("content")
+      await page.locator("meta[name='twitter:title']").getAttribute("content"),
     ).toBe("Open Graph Article Title");
   });
 
@@ -15,19 +15,19 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:description']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("Description of open graph article");
   });
 
   test("Loads twitter card correctly", async ({ page }) => {
     expect(
-      await page.locator("meta[name='twitter:card']").getAttribute("content")
+      await page.locator("meta[name='twitter:card']").getAttribute("content"),
     ).toBe("app");
   });
 
   test("Loads twitter image correctly", async ({ page }) => {
     expect(
-      await page.locator("meta[name='twitter:image']").getAttribute("content")
+      await page.locator("meta[name='twitter:image']").getAttribute("content"),
     ).toBe("https://image.com");
   });
 
@@ -35,25 +35,27 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:image:alt']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("image Alt");
   });
 
   test("Loads twitter site tag correctly", async ({ page }) => {
     expect(
-      await page.locator("meta[name='twitter:site']").getAttribute("content")
+      await page.locator("meta[name='twitter:site']").getAttribute("content"),
     ).toBe("@svelteseo");
   });
 
   test("Loads twitter creator tag correctly", async ({ page }) => {
     expect(
-      await page.locator("meta[name='twitter:creator']").getAttribute("content")
+      await page
+        .locator("meta[name='twitter:creator']")
+        .getAttribute("content"),
     ).toBe("@artiebits");
   });
 
   test("Loads twitter player  tags correctly", async ({ page }) => {
     expect(
-      await page.locator("meta[name='twitter:player']").getAttribute("content")
+      await page.locator("meta[name='twitter:player']").getAttribute("content"),
     ).toBe("https://wakey.io/embed/26");
   });
 
@@ -61,7 +63,7 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:player:width']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("720");
   });
 
@@ -69,7 +71,7 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:player:height']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("720");
   });
 
@@ -77,7 +79,7 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:player:stream']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("https://wakey.io/public/vid/26.mp4");
   });
 
@@ -85,7 +87,7 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:app:name:iphone']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("Svelte SEO");
   });
 
@@ -93,7 +95,7 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:app:id:iphone']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("23232");
   });
 
@@ -101,7 +103,7 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:app:url:iphone']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("applenews://");
   });
 
@@ -109,7 +111,7 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:app:name:ipad']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("Svelte SEO");
   });
 
@@ -117,7 +119,7 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:app:id:googleplay']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("svelte.seo.com");
   });
 
@@ -125,7 +127,7 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:app:name:googleplay']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("Svelte SEO");
   });
 
@@ -133,7 +135,7 @@ test.describe("Loads twitter tags", () => {
     expect(
       await page
         .locator("meta[name='twitter:app:url:googleplay']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("https://play.google.com/store/apps/details?id=com.sega.sonicdash");
   });
 });

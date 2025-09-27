@@ -11,13 +11,13 @@ test.describe("Testing SEO and meta tags", () => {
 
   test("Loads description tag meta[name='description']", async ({ page }) => {
     expect(
-      await page.locator("meta[name='description']").getAttribute("content")
+      await page.locator("meta[name='description']").getAttribute("content"),
     ).toBe("Description of open graph article");
   });
 
   test("Loads the base tag correctly", async ({ page }) => {
     expect(await page.locator("head base").getAttribute("href")).toBe(
-      "https://www.example.com"
+      "https://www.example.com",
     );
   });
 
@@ -27,7 +27,7 @@ test.describe("Testing SEO and meta tags", () => {
     expect(keywords, "Must render keywords tag").toBe("svelte,sveltekit,web");
     expect(
       keywords?.split(",").length,
-      "Loads the right number of keywords"
+      "Loads the right number of keywords",
     ).toBe(3);
   });
 
@@ -35,19 +35,19 @@ test.describe("Testing SEO and meta tags", () => {
     expect(
       await page
         .locator("meta[name='application-name']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("Svelte SEO");
   });
 
   test("Loads the canonical link tag correctly", async ({ page }) => {
     expect(
-      await page.locator("link[rel='canonical']").getAttribute("href")
+      await page.locator("link[rel='canonical']").getAttribute("href"),
     ).toBe("https://www.example.com");
   });
 
   test("Loads the theme color tag correctly", async ({ page }) => {
     expect(
-      await page.locator("meta[name='theme-color']").getAttribute("content")
+      await page.locator("meta[name='theme-color']").getAttribute("content"),
     ).toBe("red");
   });
 
@@ -57,25 +57,25 @@ test.describe("Testing SEO and meta tags", () => {
     expect(
       await page
         .locator("meta[content='nositelinkssearchbox']")
-        .getAttribute("content")
+        .getAttribute("content"),
     ).toBe("nositelinkssearchbox");
   });
 
   test("Loads the notranslate tag correctly", async ({ page }) => {
     expect(
-      await page.locator("meta[content='notranslate']").getAttribute("content")
+      await page.locator("meta[content='notranslate']").getAttribute("content"),
     ).toBe("notranslate");
   });
 
   test("Loads the amp tag correctly", async ({ page }) => {
     expect(await page.locator("link[rel='amphtml']").getAttribute("href")).toBe(
-      "https://www.example.com/url/to/amp/document.html"
+      "https://www.example.com/url/to/amp/document.html",
     );
   });
 
   test("Loads manifest correctly", async ({ page }) => {
     expect(
-      await page.locator("link[rel='manifest']").getAttribute("href")
+      await page.locator("link[rel='manifest']").getAttribute("href"),
     ).toBe("/manifest.json");
   });
 
