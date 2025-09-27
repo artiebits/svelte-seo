@@ -24,7 +24,7 @@ test.describe("Testing SEO and meta tags", () => {
   test("Loads the keywords tag correctly", async ({ page }) => {
     const element = page.locator("meta[name='keywords']");
     const keywords = await element.getAttribute("content");
-    expect(keywords, "Must render keywords tag").toBe("svelte,sveltekit,web");
+    expect(keywords, "Must render keywords tag").toBe("svelte, sveltekit, web");
     expect(
       keywords?.split(",").length,
       "Loads the right number of keywords",

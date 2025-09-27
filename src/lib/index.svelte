@@ -1,5 +1,7 @@
 <script lang="ts">
   import type { SvelteSeo } from './types';
+  import transformKey from "../utils/transform-key";
+  import OpenGraphComponent from "./open-graph.svelte";
   
   interface Props extends SvelteSeo {}
   
@@ -24,8 +26,6 @@
     jsonLd,
     children
   }: Props = $props();
-
-  import OpenGraphComponent from "./open-graph.svelte";
 </script>
 
 <svelte:head>
@@ -75,18 +75,8 @@
     <meta property="fb:app_id" content={facebook.appId} />
   {/if}
 
-  <meta
-    name="robots"
-    content={`${noindex ? "noindex" : "index"},${
-      nofollow ? "nofollow" : "follow"
-    }`}
-  />
-  <meta
-    name="googlebot"
-    content={`${noindex ? "noindex" : "index"},${
-      nofollow ? "nofollow" : "follow"
-    }`}
-  />
+  <meta name="robots" content={`${noindex ? "noindex" : "index"},${nofollow ? "nofollow" : "follow"}`} />
+  <meta name="googlebot" content={`${noindex ? "noindex" : "index"},${nofollow ? "nofollow" : "follow"}`} />
 
   {#if nositelinkssearchbox}
     <meta name="google" content="nositelinkssearchbox" />
@@ -98,12 +88,7 @@
 
   {#if twitter}
     {#each Object.entries(twitter) as [key, value] (key)}
-      {@const transformed = key
-        .replace(/([a-z])([A-Z])/g, "$1:$2")
-        .toLowerCase()}
-      <!-- The `transformed` variable changes eg, twitter.title into twitter:title
-                It loops over all the properties and changes the '.' into ':'
-            -->
+      {@const transformed = transformKey(key)}
       <meta name="twitter:{transformed}" content={value} />
     {/each}
   {/if}
