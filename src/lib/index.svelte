@@ -1,57 +1,26 @@
 <script>
-  /** @type {import("./types").SvelteSeo['title']}*/
-  export let title = undefined;
-
-  /** @type {import("./types").SvelteSeo["description"]}*/
-  export let description = undefined;
-
-  /**@type {import("./types").SvelteSeo["keywords"]}*/
-  export let keywords = undefined;
-
-  /** @type {import("./types").SvelteSeo["base"]}*/
-  export let base = undefined;
-
-  /**@type {import("./types").SvelteSeo["applicationName"]}*/
-  export let applicationName = undefined;
-
-  /**@type {import("./types").SvelteSeo["themeColor"]}*/
-  export let themeColor = undefined;
-
-  /**@type {import("./types").SvelteSeo["nofollow"]}*/
-  export let nofollow = false;
-
-  /**@type {import("./types").SvelteSeo["noindex"]}*/
-  export let noindex = false;
-
-  /**@type {import("./types").SvelteSeo["nositelinkssearchbox"]}*/
-  export let nositelinkssearchbox = false;
-
-  /** @type {import("./types").SvelteSeo["notranslate"]}*/
-  export let notranslate = false;
-
-  /** @type {import("./types").SvelteSeo["canonical"]}*/
-  export let canonical = undefined;
-
-  /** @type {import("./types").SvelteSeo["amp"]}*/
-  export let amp = undefined;
-
-  /** @type {import("./types").SvelteSeo["manifest"]}*/
-  export let manifest = undefined;
-
-  /**@type {import("./types").SvelteSeo["languageAlternates"]}*/
-  export let languageAlternates = undefined;
-
-  /**@type {import("./types").SvelteSeo['twitter']}*/
-  export let twitter = undefined;
-
-  /**@type {import('./types').SvelteSeo['openGraph']}*/
-  export let openGraph = undefined;
-
-  /**@type {import("./types").SvelteSeo['facebook']}*/
-  export let facebook = undefined;
-
-  /**@type {import("./types").SvelteSeo['jsonLd']}*/
-  export let jsonLd = undefined;
+  /** @type {import('./types').SvelteSeo}*/
+  const {
+    title,
+    description,
+    keywords,
+    base,
+    applicationName,
+    themeColor,
+    nofollow,
+    noindex,
+    canonical,
+    openGraph,
+    amp,
+    languageAlternates,
+    facebook,
+    manifest,
+    twitter,
+    nositelinkssearchbox,
+    notranslate,
+    jsonLd,
+    children
+  } = $props();
 
   import OpenGraphComponent from "./open-graph.svelte";
 </script>
@@ -86,7 +55,7 @@
   {/if}
 
   {#if languageAlternates}
-    {#each languageAlternates as { href, hreflang }}
+    {#each languageAlternates as { href, hreflang } (href)}
       <link rel="alternate" {href} {hreflang} />
     {/each}
   {/if}
@@ -125,7 +94,7 @@
   {/if}
 
   {#if twitter}
-    {#each Object.entries(twitter) as [key, value]}
+    {#each Object.entries(twitter) as [key, value] (key)}
       {@const transformed = key
         .replace(/([a-z])([A-Z])/g, "$1:$2")
         .toLowerCase()}
@@ -147,5 +116,5 @@
     }/script>`}
   {/if}
 
-  <slot />
+  {@render children?.()}
 </svelte:head>
