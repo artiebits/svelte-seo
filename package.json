@@ -1,6 +1,6 @@
 {
   "name": "svelte-seo",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "license": "MIT",
   "repository": "git@github.com:artiebits/svelte-seo.git",
   "scripts": {
