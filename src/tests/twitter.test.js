@@ -67,7 +67,7 @@ test.describe("Loads twitter tags", () => {
     ).toBe("720");
   });
 
-  test("Loads twtter player height tag correctly", async ({ page }) => {
+  test("Loads twitter player height tag correctly", async ({ page }) => {
     expect(
       await page
         .locator("meta[name='twitter:player:height']")

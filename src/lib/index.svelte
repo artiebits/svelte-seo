@@ -1,5 +1,8 @@
-<script>
-  /** @type {import('./types').SvelteSeo}*/
+<script lang="ts">
+  import type { SvelteSeo } from './types';
+  
+  interface Props extends SvelteSeo {}
+  
   const {
     title,
     description,
@@ -20,7 +23,7 @@
     notranslate,
     jsonLd,
     children
-  } = $props();
+  }: Props = $props();
 
   import OpenGraphComponent from "./open-graph.svelte";
 </script>

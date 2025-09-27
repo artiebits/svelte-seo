@@ -1,6 +1,11 @@
-<script>
-  /** @type {{ openGraph: import("./types").SvelteSeo['openGraph'] }} */
-  const { openGraph } = $props();
+<script lang="ts">
+  import type { OpenGraph } from './types';
+  
+  interface Props {
+    openGraph: OpenGraph;
+  }
+  
+  const { openGraph }: Props = $props();
 </script>
 
 {#if openGraph}

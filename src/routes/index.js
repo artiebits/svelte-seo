@@ -1,10 +1,11 @@
+/** @type {import("../lib/types").SvelteSeo} */
 const SEO = {
   title: "Open Graph Article Title",
   noindex: false,
   nofollow: false,
   description: "Description of open graph article",
   base: "https://www.example.com",
-  keywords: ["svelte", "sveltekit", "web"],
+  keywords: "svelte, sveltekit, web",
   applicationName: "Svelte SEO",
   canonical: "https://www.example.com",
   themeColor: "red",
@@ -23,7 +24,6 @@ const SEO = {
     },
   ],
 
-  /**@type {import("../lib/types").SvelteSeo['twitter']}*/
   twitter: {
     title: "Open Graph Article Title",
     description: "Description of open graph article",
@@ -50,7 +50,6 @@ const SEO = {
     appId: "12344567",
   },
 
-  /**@type {import("../lib/types").OpenGraph} */
   openGraph: {
     title: "Open Graph Article Title",
     type: "website",

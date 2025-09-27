@@ -1,4 +1,5 @@
 import { Thing, WithContext } from "schema-dts";
+import type { Snippet } from "svelte";
 
 export interface SvelteSeo {
   title?: string;
@@ -7,10 +8,10 @@ export interface SvelteSeo {
   keywords?: string;
   applicationName?: string;
   themeColor?: string;
-  nofollow?: Boolean;
-  noindex?: Boolean;
-  nositelinkssearchbox: Boolean;
-  notranslate: Boolean;
+  nofollow?: boolean;
+  noindex?: boolean;
+  nositelinkssearchbox: boolean;
+  notranslate: boolean;
   canonical?: string;
   amp?: string;
   manifest?: string;
@@ -80,7 +81,7 @@ declare interface OpenGraph {
   movie?: OpenGraphVideo;
   article?: OpenGraphArticle;
   book?: OpenGraphBook;
-  profile?: openGraphProfile;
+  profile?: OpenGraphProfile;
 }
 
 declare interface OpenGraphMusic {
@@ -123,7 +124,7 @@ declare interface OpenGraphBook {
   tag?: string[];
 }
 
-declare interface openGraphProfile {
+declare interface OpenGraphProfile {
   first_name?: string;
   last_name?: string;
   username?: string;

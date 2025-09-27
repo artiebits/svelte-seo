@@ -6,7 +6,7 @@
 <SvelteSEO
   title={SEO.title}
   description={SEO.description}
-  keywords={SEO.keywords.toString()}
+  keywords={SEO.keywords}
   base={SEO.base}
   applicationName={SEO.applicationName}
   themeColor={SEO.themeColor}
