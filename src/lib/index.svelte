@@ -58,7 +58,7 @@
   {/if}
 
   {#if languageAlternates}
-    {#each languageAlternates as { href, hreflang } (href)}
+    {#each languageAlternates as { href, hreflang } (hreflang)}
       <link rel="alternate" {href} {hreflang} />
     {/each}
   {/if}
