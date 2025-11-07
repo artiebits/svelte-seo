@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.7.1](https://www.github.com/artiebits/svelte-seo/compare/v1.7.0...v1.7.1) (2025-11-07)
+
+
+### Bug Fixes
+
+* add dist folder to .gitignore ([abf5383](https://www.github.com/artiebits/svelte-seo/commit/abf5383cb2e2a09018bfb25d1c4ddf749eb2bf98))
+
 ## [1.7.0](https://www.github.com/artiebits/svelte-seo/compare/v1.6.1...v1.7.0) (2025-09-27)
 
 
