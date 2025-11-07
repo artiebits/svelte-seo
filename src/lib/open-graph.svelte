@@ -1,6 +1,10 @@
 <script lang="ts">
   import type { OpenGraph as OpenGraphType } from './types';
-  import transformKey from "../utils/transform-key";
+  
+  // Helper function to change eg, twitter.title into twitter:title
+  function transformKey(key: string): string {
+    return key.replace(/([a-z])([A-Z])/g, "$1:$2").toLowerCase();
+  }
   
   interface Props {
     openGraph: OpenGraphType;

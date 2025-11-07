@@ -1,7 +1,11 @@
 <script lang="ts">
   import type { SvelteSeo } from './types';
-  import transformKey from "../utils/transform-key";
   import OpenGraphComponent from "./open-graph.svelte";
+  
+  // Helper function to change eg, twitter.title into twitter:title
+  function transformKey(key: string): string {
+    return key.replace(/([a-z])([A-Z])/g, "$1:$2").toLowerCase();
+  }
   
   interface Props extends SvelteSeo {}
   
