@@ -39,6 +39,9 @@
     "typescript": "^5.9.2",
     "vite": "^7.1.7"
   },
+  "peerDependencies": {
+    "svelte": "5"
+  },
   "type": "module",
   "keywords": [
     "svelte",
