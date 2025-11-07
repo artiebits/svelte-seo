@@ -1,6 +1,8 @@
 // eslint.config.js
 import js from "@eslint/js";
 import svelte from "eslint-plugin-svelte";
+import svelteParser from "svelte-eslint-parser";
+import tsParser from "@typescript-eslint/parser";
 import globals from "globals";
 import svelteConfig from "./svelte.config.js";
 
@@ -32,10 +34,17 @@ export default [
     },
   },
   {
-    files: ["**/*.svelte", "**/*.svelte.js"],
+    files: ["**/*.svelte"],
     languageOptions: {
+      parser: svelteParser,
       parserOptions: {
+        parser: {
+          ts: tsParser,
+          typescript: tsParser,
+        },
         svelteConfig,
+        ecmaVersion: "latest",
+        sourceType: "module",
       },
     },
     rules: {
