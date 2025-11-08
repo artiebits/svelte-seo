@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/artiebits/svelte-seo/compare/v1.7.0...v2.0.0) (2025-11-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* add Svelte v5 as peer dep to fix missing props type declarations (#110)
+* cleanup after migration
+
+### Bug Fixes
+
+* add dist folder to .gitignore ([abf5383](https://www.github.com/artiebits/svelte-seo/commit/abf5383cb2e2a09018bfb25d1c4ddf749eb2bf98))
+* add Svelte v5 as peer dep to fix missing props type declarations ([#110](https://www.github.com/artiebits/svelte-seo/issues/110)) ([1c7e79c](https://www.github.com/artiebits/svelte-seo/commit/1c7e79c5310d8e92f1c4616e62f63d8cddead19f))
+* cleanup after migration ([c3a78d8](https://www.github.com/artiebits/svelte-seo/commit/c3a78d8a71b4a9df2b79cfc5a607d40c516271ba))
+* inline transform key function ([f9fedb3](https://www.github.com/artiebits/svelte-seo/commit/f9fedb3cf0879939127c283ed42a4867685cebda))
+
 ## [1.7.0](https://www.github.com/artiebits/svelte-seo/compare/v1.6.1...v1.7.0) (2025-09-27)
 
 
