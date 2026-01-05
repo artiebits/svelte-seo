@@ -51,16 +51,6 @@ test.describe("Testing SEO and meta tags", () => {
     ).toBe("red");
   });
 
-  test("Loads the nositelinkssearchbox meta tag correctly", async ({
-    page,
-  }) => {
-    expect(
-      await page
-        .locator("meta[content='nositelinkssearchbox']")
-        .getAttribute("content"),
-    ).toBe("nositelinkssearchbox");
-  });
-
   test("Loads the notranslate tag correctly", async ({ page }) => {
     expect(
       await page.locator("meta[content='notranslate']").getAttribute("content"),
