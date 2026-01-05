@@ -2,11 +2,17 @@ import { Thing, WithContext } from "schema-dts";
 import type { Snippet } from "svelte";
 
 export interface SvelteSeo {
+  /** It defines the document's title that is shown in a browser's title bar or a page's tab */
   title?: string;
+  /** The description content value is often what search engines display under the page's title in search results */
   description?: string;
+  /** It specifies the base URL to use for all relative URLs in a document */
   base?: string;
+  /**It provide keywords for search engines to determine the relevance of that page for different search terms */
   keywords?: string;
+  /** Browsers may use this to identify the application running in the web page. It is different from the <title> element, which may contain an application (or website) name */
   applicationName?: string;
+  /** indicates a suggested color that user agents should use to customize the display of the page or of the surrounding user interface. */
   themeColor?: string;
   nofollow?: boolean;
   noindex?: boolean;
