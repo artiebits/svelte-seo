@@ -16,7 +16,6 @@ export interface SvelteSeo {
   themeColor?: string;
   nofollow?: boolean;
   noindex?: boolean;
-  nositelinkssearchbox?: boolean;
   notranslate?: boolean;
   canonical?: string;
   amp?: string;

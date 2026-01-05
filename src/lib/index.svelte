@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { SvelteSeo } from './types';
+  import type { SvelteSeo } from "./types";
   import OpenGraphComponent from "./open-graph.svelte";
-  
+
   // Helper function to change eg, twitter.title into twitter:title
   function transformKey(key: string): string {
     return key.replace(/([a-z])([A-Z])/g, "$1:$2").toLowerCase();
   }
-  
+
   interface Props extends SvelteSeo {}
-  
+
   const {
     title,
     description,
@@ -25,10 +25,9 @@
     facebook,
     manifest,
     twitter,
-    nositelinkssearchbox,
     notranslate,
     jsonLd,
-    children
+    children,
   }: Props = $props();
 </script>
 
@@ -79,12 +78,14 @@
     <meta property="fb:app_id" content={facebook.appId} />
   {/if}
 
-  <meta name="robots" content={`${noindex ? "noindex" : "index"},${nofollow ? "nofollow" : "follow"}`} />
-  <meta name="googlebot" content={`${noindex ? "noindex" : "index"},${nofollow ? "nofollow" : "follow"}`} />
-
-  {#if nositelinkssearchbox}
-    <meta name="google" content="nositelinkssearchbox" />
-  {/if}
+  <meta
+    name="robots"
+    content={`${noindex ? "noindex" : "index"},${nofollow ? "nofollow" : "follow"}`}
+  />
+  <meta
+    name="googlebot"
+    content={`${noindex ? "noindex" : "index"},${nofollow ? "nofollow" : "follow"}`}
+  />
 
   {#if notranslate}
     <meta name="google" content="notranslate" />

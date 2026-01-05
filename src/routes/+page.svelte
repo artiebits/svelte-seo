@@ -10,7 +10,6 @@
   base={SEO.base}
   applicationName={SEO.applicationName}
   themeColor={SEO.themeColor}
-  nositelinkssearchbox={SEO.nositelinkssearchbox}
   notranslate={SEO.notranslate}
   canonical={SEO.canonical}
   amp={SEO.amp}
