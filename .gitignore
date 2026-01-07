@@ -9,4 +9,5 @@ node_modules
 .eslintcache
 yarn.lockg
 pnpm-lock.yaml
+bun.lock
 /dist

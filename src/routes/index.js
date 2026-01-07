@@ -9,7 +9,6 @@ const SEO = {
   applicationName: "Svelte SEO",
   canonical: "https://www.example.com",
   themeColor: "red",
-  nositelinkssearchbox: true,
   notranslate: true,
   amp: "https://www.example.com/url/to/amp/document.html",
   manifest: "/manifest.json",
