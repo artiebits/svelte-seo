@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/artiebits/svelte-seo/compare/v2.0.0...v2.1.0) (2026-03-21)
+
+
+### Features
+
+* Add JSDOC descriptions to the properties ([#116](https://www.github.com/artiebits/svelte-seo/issues/116)) ([aafddb9](https://www.github.com/artiebits/svelte-seo/commit/aafddb9829fcdaa6ea38b3a9f424753badd472b3))
+
 ## [2.0.0](https://www.github.com/artiebits/svelte-seo/compare/v1.7.0...v2.0.0) (2025-11-07)
 
 
