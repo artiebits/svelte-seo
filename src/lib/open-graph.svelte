@@ -26,7 +26,8 @@
       {#each value as image (image)}
         {#each Object.entries(image) as [imgKey, imgValue] (imgKey)}
           {#if imgValue !== null && imgValue !== undefined}
-            <meta property="og:image:{imgKey}" content={imgValue.toString()} />
+            {@const prop = imgKey === "url" ? "og:image" : `og:image:${imgKey}`}
+            <meta property={prop} content={imgValue.toString()} />
           {/if}
         {/each}
       {/each}

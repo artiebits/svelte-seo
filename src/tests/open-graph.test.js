@@ -27,8 +27,8 @@ test.describe("Testing OpenGraph meta tags", async () => {
     );
   });
 
-  test("Loads og:image:url tag correctly", async ({ page }) => {
-    const element = page.locator("meta[property='og:image:url']");
+  test("Loads og:image tag correctly", async ({ page }) => {
+    const element = page.locator("meta[property='og:image']");
     expect(element, "The tag must exist").toBeDefined();
     expect(await element.count(), "Loads the right amount of tags").toBe(2);
   });
