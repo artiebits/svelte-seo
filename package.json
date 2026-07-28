@@ -22,7 +22,7 @@
     "@eslint/js": "^9.33.0",
     "@playwright/test": "^1.55.0",
     "@sveltejs/adapter-auto": "^6.1.0",
-    "@sveltejs/kit": "^2.36.1",
+    "@sveltejs/kit": "^2.70.1",
     "@sveltejs/package": "2.5.0",
     "@typescript-eslint/parser": "^8.46.3",
     "eslint": "^9.33.0",
